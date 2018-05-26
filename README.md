@@ -22,4 +22,8 @@ _It is worth mention that this book is usefull only in beginning and leaves lots
 
 ## Need to read and may be useless
 * Guide through Ethereum: https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial
-*
+* Implementing the Ethereum Virtual Machine (Part I): https://nervous.io/clojure/crypto/2017/09/12/clojure-evm/
+* Под капотом Ethereum Virtual Machine. Часть 1 — Solidity basics: https://habr.com/post/340928/
+
+* EVM-JIT: https://medium.com/@jeff.ethereum/go-ethereums-jit-evm-27ef88277520
+* Go Ethereum: https://github.com/ethereum/go-ethereum
