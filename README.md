@@ -11,14 +11,15 @@ _It is worth mention that this book is usefull only in beginning and leaves lots
 # External Links
 ---
 ## Solidity
-* Guy analyses compiled contracts: [https://blog.qtum.org/diving-into-the-ethereum-vm-6e8d5d2f3c30]
+* Guy analyses compiled contracts: https://blog.qtum.org/diving-into-the-ethereum-vm-6e8d5d2f3c30
 * 
 
 ## EVM
-* Opcodes: [https://gist.github.com/hayeah/bd37a123c02fecffbe629bf98a8391df]
-* Assembly: [https://solidity.readthedocs.io/en/develop/assembly.html]
-* Ethereum VM, Bytecode & Bugged Smart-Contracts: [https://www.youtube.com/watch?v=odOuUhASCII]
+* Opcodes: https://gist.github.com/hayeah/bd37a123c02fecffbe629bf98a8391df
+* Assembly: https://solidity.readthedocs.io/en/develop/assembly.html
+* Ethereum VM, Bytecode & Bugged Smart-Contracts: https://www.youtube.com/watch?v=odOuUhASCII
 * 
 
 ## Need to read and may be useless
 * Guide through Ethereum: https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial
+*
