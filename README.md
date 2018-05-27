@@ -18,7 +18,6 @@ _It is worth mention that this book is usefull only in beginning and leaves lots
 * Assembly: https://solidity.readthedocs.io/en/develop/assembly.html
 * Ethereum VM, Bytecode & Bugged Smart-Contracts: https://www.youtube.com/watch?v=odOuUhASCII
 * 
-
 ### Opcodes
 * Raw list: https://gist.github.com/hayeah/bd37a123c02fecffbe629bf98a8391df
 * Separated list: https://ethereum.stackexchange.com/questions/119/what-opcodes-are-available-for-the-ethereum-evm
