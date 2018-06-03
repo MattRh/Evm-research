@@ -1,0 +1,11 @@
+{
+    "name": "evm-research",
+    "version": "0.0.1",
+    "dependencies": {
+        "gulp": "^4.0.0",
+        "solc": "^0.4.24",
+        "solium": "^1.1.7",
+        "solium-plugin-security": "^0.1.1",
+        "ethereumjs-vm": "^2.3.5"
+    }
+}
