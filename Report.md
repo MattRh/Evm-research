@@ -45,16 +45,33 @@ console.log(opcodes.replace(/\s([A-Z])/g, '\n$1'));
 По количеству скачиваний плагина решение на платформе Microsoft выглядит более популярным (223K vs 42K),
 но я бОльший поклонник платформы IntelliJ, так что я выбрал ее и дальше опишу ее проблемы и достоинства в конкретном случае.
 
-##### Плюсы
+**Плюсы**
+
 // todo
 
-##### Минусы
+**Минусы**
+
 // todo
 
 # Используемые инструменты
 
 ---
 Готового для исследований не нашел, так что придется свои писать..
+// todo
+
+# Solidity
+
+---
+// todo
+
+# Ethereum Virtual Machine
+
+---
+// todo
+
+# Security
+
+---
 // todo
 
 # Books
@@ -69,7 +86,6 @@ _It is worth mention that this book is usefull only in beginning and leaves lots
 # References
 
 ---
-
 It is recommended to follow order of links while reading.
 In blogs it is better to start from oldest posts about blockchain/smart-contracts
 (thankfully, Ethereum is not so old, so you probably won't gain legacy knowledge)
@@ -91,8 +107,10 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 * (video) EVM, Bytecode & Bugged Smart-Contracts: https://www.youtube.com/watch?v=odOuUhASCII
 
 ### Docs/Tools
+* (doc) Smart-contracts & EVM analysis: http://www.comae.io/reports/dc25-msuiche-Porosity-Decompiling-Ethereum-Smart-Contracts-wp.pdf
 * (official repo) Go Ethereum: https://github.com/ethereum/go-ethereum
 * (3rd party repo) Disassembly (unfortunately, seems outdated and written on Python2): https://github.com/tintinweb/ethereum-dasm
+* (3rf party soft) Porosity (disassemble, vulnerability analyser): https://github.com/comaeio/porosity
 
 ### Opcodes
 * (gist) Raw list: https://gist.github.com/hayeah/bd37a123c02fecffbe629bf98a8391df
@@ -104,9 +122,5 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 * Под капотом Ethereum Virtual Machine. Часть 1 — Solidity basics: https://habr.com/post/340928/
 * (RU) Boring material about EVM, but may be usefull: https://craftappmobile.com/%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0-ethereum-evm/#EVM
 
-
-
 * (official doc) Assembly: https://solidity.readthedocs.io/en/develop/assembly.html
-
-* (doc) Smart-contracts & EVM analysis: http://www.comae.io/reports/dc25-msuiche-Porosity-Decompiling-Ethereum-Smart-Contracts-wp.pdf
 * (blog) Security blog posts: http://swende.se/
