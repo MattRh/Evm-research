@@ -1,4 +1,4 @@
-# Где разрабатывать
+# Development
 
 ---
 Наверное первый вопрос, который может возниктуть в начале изучения Solidity - существующие среды для
@@ -26,7 +26,7 @@
 Имеет вроде как все необходимые функции, только дизассемблированный код довольно сложно читать.
 При большом желании можно получить относительно читаемый список опкодов, выполнив следующее действие в JS консоли:
 ```js
-var opcodes = "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE";
+let opcodes = "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE";
 
 console.log(opcodes.replace(/\s([A-Z])/g, '\n$1'));
 // PUSH1 0x80
@@ -43,35 +43,113 @@ console.log(opcodes.replace(/\s([A-Z])/g, '\n$1'));
 
 Эти две IDE вроде бы единственные, где коммьюнити добавило поддержку Solidity и Ethereum в целом.
 По количеству скачиваний плагина решение на платформе Microsoft выглядит более популярным (223K vs 42K),
-но я бОльший поклонник платформы IntelliJ, так что я выбрал ее и дальше опишу ее проблемы и достоинства в конкретном случае.
+но я бОльший поклонник платформы IntelliJ, так что я выбрал ее(а точнее WebStorm)
+и дальше опишу опыт ее использования в конкретном случае.
 
 **Плюсы**
 
-// todo
+// todo: 
 
 **Минусы**
 
 // todo
 
-# Используемые инструменты
+# Tools
 
 ---
+
+## Public tools
+// todo: здесь те библиотеки или готовые инструменты, которыми можно пользоваться
+
+## Tools for research
 Готового для исследований не нашел, так что придется свои писать..
-// todo
-
-# Solidity
-
----
 // todo
 
 # Ethereum Virtual Machine
 
 ---
+
+## Общее устройство
+// todo: как работает, на чем работает, скорость изменения API/Опкодов
+
+### Function hashes
+// todo: как генерируются, зачем нужны
+
+### Jumps, branching
+// todo: как делаются, какие ограничения
+
+### Function calls
+// todo: как вызываются функции
+
+## Память
+
+### Storage
+> Обращение через `SLOAD/SSTORE`
+
 // todo
+
+### Memory
+> Обращение через `MLOAD/MSTORE/MSTORE8`
+
+// todo
+
+### Stack
+
+// todo
+
+## Opcodes
+// todo: ссылка на полный список и описание основных из них
+
+# Solidity
+
+---
+
+## Syntax
+// todo: описание, что, где, как, пример простого контракта, покрывающего почти все возможности
+
+### Complex structures and arrays
+// todo: как они выглядят для разработчика и как для EVM
+
+### Visibility
+// todo: уровни видимости переменных и функций
+
+### Modifiers
+// todo: интересный механизм, но надо быть аккуратным
+
+### Exceptions
+// todo: кидать можно, ловить - нет
+
+## Testing
+// todo: рассказать, как все плохо, и есть ли свет в конце туннеля
+
+## Compilation
+// todo: какие компялиторы есть и как пользоваться
+
+### ABI
+// todo: что это, зачем генерируется и как использовать
+
+### Optimizer
+// todo: какие особенности оптимизатора, где он не справляется, где справляется, на что нацелен (на уменьшение потребляемого газа)
+
+## Deployment & Execution
+// todo: как добавить контракт в блокчейн, запустить его. Может быть привести интересные контракты уже в блокчеине (например есть один, который собрал уже 1ккк баксов)
+
+# Solidity -> EVM
+// todo: основные понятия и данные и ссылка на док с полным списком (mappings.md)
+
 
 # Security
 
 ---
+## Problems in Solidity
+
+### By design
+// todo
+
+### Compilers
+// todo
+
+## Problems in EVM
 // todo
 
 # Books
@@ -117,7 +195,7 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 * (stackoverflow) Separated list: https://ethereum.stackexchange.com/questions/119/what-opcodes-are-available-for-the-ethereum-evm
 * (collection) List with costs (compilation of many docs): https://github.com/trailofbits/evm-opcodes
 
-## Need to read, but may be useless
+## Pending list: то, что я еще не прочел, но может оказаться полезным
 * Implementing the Ethereum Virtual Machine (Part I): https://nervous.io/clojure/crypto/2017/09/12/clojure-evm/
 * Под капотом Ethereum Virtual Machine. Часть 1 — Solidity basics: https://habr.com/post/340928/
 * (RU) Boring material about EVM, but may be usefull: https://craftappmobile.com/%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0-ethereum-evm/#EVM
