@@ -15,9 +15,9 @@ utils.parseByLine(comSource).forEach((row) => {
 
     if(list2[1]) {
         curIntHex = utils.hexToInt(list2[1]);
-    } else {
-        list2[1] = "0x" + utils.intToHex(curIntHex);
     }
+
+    list2[1] = utils.intToHex(curIntHex);
 
     let jsonData = {
         hex: list2[1],
@@ -25,8 +25,8 @@ utils.parseByLine(comSource).forEach((row) => {
         description: ucFirst(list1[1]),
     };
 
-    let opcode = utils.findOpcodeByHex(jsonData.hex);
-    merge(opcode, jsonData);
+    let opcode = utils.findOpcodeByName(jsonData.mnemonic);
+    merge(opcode, merge(jsonData, opcode));
 
     curIntHex++;
 });

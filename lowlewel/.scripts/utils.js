@@ -1,5 +1,23 @@
 "use strict";
 
+const paramsRightOrder = [
+    "hex",
+    "mnemonic",
+    "assembly",
+    "pops",
+    "pushes",
+    "tier",
+    "description",
+    "gas",
+    "gas_function",
+    "additional_items",
+    "side_effects",
+    "tentative",
+    "internal",
+    "assembly_description",
+    "link"
+];
+
 const fs = require("fs");
 const stringify = require("json-stringify-pretty-compact");
 
@@ -56,7 +74,12 @@ function parseByLine(rawSource) {
 }
 
 function intToHex(num) {
-    return num.toString(16);
+    let hex = num.toString(16);
+    if(hex.length === 1) {
+        hex = "0" + hex;
+    }
+
+    return "0x" + hex;
 }
 
 function hexToInt(hex) {

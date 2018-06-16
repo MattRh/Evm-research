@@ -38,7 +38,7 @@ utils.parseByLine(manSource).forEach((row) => {
         delete jsonData.description;
     }
 
-    merge(opcode, jsonData);
+    merge(opcode, merge(jsonData, opcode));
 });
 
 utils.saveCommon();

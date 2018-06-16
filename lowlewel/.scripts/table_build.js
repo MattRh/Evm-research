@@ -5,8 +5,8 @@ const toMarkdown = require("json-to-markdown-table");
 
 let utils = require("./utils");
 
-function compileTable(arr, columns = []) {
-    if(!columns.length) {
+function compileTable(arr, columns = [], extend_columns = false) {
+    if(!columns.length || extend_columns) {
         arr.forEach((obj) => {
             Object.keys(obj).forEach((val) => {
                 if(!columns.includes(val)) {
@@ -54,11 +54,14 @@ let opcodes = compileTable(source.opcodes);
 //console.log("### Tiers \n\n", tiers, "\n");
 //console.log("### Opcodes \n\n", opcodes, "\n");
 
-fs.writeFileSync('../opcodes.table.md', "### Opcodes \n\n" + opcodes);
+fs.writeFileSync("../opcodes.table.md", "### Opcodes \n\n" + opcodes);
 
-function ucFirst(str) {
+function formatHead(str) {
     if(typeof str === "string") {
-        return str.charAt(0).toUpperCase() + str.slice(1);
+        let ucStr = str.charAt(0).toUpperCase() + str.slice(1);
+        ucStr = ucStr.replace(/_/g, " ");
+
+        return ucStr;
     }
 
     return str;

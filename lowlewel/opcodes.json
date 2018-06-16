@@ -1,30 +1,110 @@
 {
     "groups": [
-        {"prefix": "0x00", "description": "Stop and Arithmetic Operations"},
-        {"prefix": "0x10", "description": "Comparison & Bitwise Logic Operations"},
-        {"prefix": "0x20", "description": "SHA3"},
-        {"prefix": "0x30", "description": "Environmental Information"},
-        {"prefix": "0x40", "description": "Block Information"},
-        {"prefix": "0x50", "description": "Stack, Memory, Storage and Flow Operations"},
-        {"prefix": "0x60", "description": "Push Operations"},
-        {"prefix": "0x70", "description": "Push Operations"},
-        {"prefix": "0x80", "description": "Duplication Operations"},
-        {"prefix": "0x90", "description": "Exchange Operations"},
-        {"prefix": "0xa0", "description": "Logging Operations"},
-        {"prefix": "0xf0", "description": "System operations"}
+        {
+            "prefix": "0x00",
+            "description": "Stop and Arithmetic Operations"
+        },
+        {
+            "prefix": "0x10",
+            "description": "Comparison & Bitwise Logic Operations"
+        },
+        {
+            "prefix": "0x20",
+            "description": "SHA3"
+        },
+        {
+            "prefix": "0x30",
+            "description": "Environmental Information"
+        },
+        {
+            "prefix": "0x40",
+            "description": "Block Information"
+        },
+        {
+            "prefix": "0x50",
+            "description": "Stack, Memory, Storage and Flow Operations"
+        },
+        {
+            "prefix": "0x60",
+            "description": "Push Operations"
+        },
+        {
+            "prefix": "0x70",
+            "description": "Push Operations"
+        },
+        {
+            "prefix": "0x80",
+            "description": "Duplication Operations"
+        },
+        {
+            "prefix": "0x90",
+            "description": "Exchange Operations"
+        },
+        {
+            "prefix": "0xa0",
+            "description": "Logging Operations"
+        },
+        {
+            "prefix": "0xf0",
+            "description": "System operations"
+        }
     ],
     "tiers": [
-        {"tier": "Zero", "cost": 0, "comment": "Zero"},
-        {"tier": "Base", "cost": 2, "comment": "Quick"},
-        {"tier": "VeryLow", "cost": 3, "comment": "Fastest"},
-        {"tier": "Low", "cost": 5, "comment": "Fast"},
-        {"tier": "Mid", "cost": 8, "comment": "Mid"},
-        {"tier": "High", "cost": 10, "comment": "Slow"},
-        {"tier": "Ext", "cost": 20, "comment": "Ext"},
-        {"tier": "ExtCode", "cost": 700, "comment": "Extcode"},
-        {"tier": "Balance", "cost": 400, "comment": "Balance"},
-        {"tier": "Special", "cost": "", "comment": "multiparam or otherwise special"},
-        {"tier": "Invalid", "cost": 0, "comment": "Invalid"}
+        {
+            "tier": "Zero",
+            "cost": 0,
+            "comment": "Zero"
+        },
+        {
+            "tier": "Base",
+            "cost": 2,
+            "comment": "Quick"
+        },
+        {
+            "tier": "VeryLow",
+            "cost": 3,
+            "comment": "Fastest"
+        },
+        {
+            "tier": "Low",
+            "cost": 5,
+            "comment": "Fast"
+        },
+        {
+            "tier": "Mid",
+            "cost": 8,
+            "comment": "Mid"
+        },
+        {
+            "tier": "High",
+            "cost": 10,
+            "comment": "Slow"
+        },
+        {
+            "tier": "Ext",
+            "cost": 20,
+            "comment": "Ext"
+        },
+        {
+            "tier": "ExtCode",
+            "cost": 700,
+            "comment": "Extcode"
+        },
+        {
+            "tier": "Balance",
+            "cost": 400,
+            "comment": "Balance"
+        },
+        {
+            "tier": "Special",
+            "cost": "",
+            "comment": "multiparam or otherwise special"
+        },
+        {
+            "tier": "Invalid",
+            "cost": 0,
+            "comment": "Invalid"
+        }
     ],
     "opcodes": [
         {
@@ -35,8 +115,8 @@
             "side_effects": true,
             "tier": "Zero",
             "hex": "0x00",
-            "gas": 0,
-            "description": "Halts execution"
+            "description": "Halts execution",
+            "gas": 0
         },
         {
             "mnemonic": "ADD",
@@ -46,18 +126,8 @@
             "side_effects": false,
             "tier": "VeryLow",
             "hex": "0x01",
-            "gas": 3,
-            "description": "Addition operation."
-        },
-        {
-            "hex": "0x1",
-            "mnemonic": "ADD",
             "description": "Addition operation",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
+            "gas": 3
         },
         {
             "mnemonic": "MUL",
@@ -67,19 +137,8 @@
             "side_effects": false,
             "tier": "Low",
             "hex": "0x02",
-            "gas": 5,
-            "description": "Multiplication operation."
-        },
-        {"hex": "0x2", "mnemonic": "MUL", "description": "Multiplication operation"},
-        {
-            "hex": "0x3",
-            "mnemonic": "SUB",
-            "description": "Subtraction operation",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
+            "description": "Multiplication operation",
+            "gas": 5
         },
         {
             "mnemonic": "SUB",
@@ -89,8 +148,8 @@
             "side_effects": false,
             "tier": "VeryLow",
             "hex": "0x03",
-            "gas": 3,
-            "description": "Subtraction operation."
+            "description": "Subtraction operation",
+            "gas": 3
         },
         {
             "mnemonic": "DIV",
@@ -100,57 +159,139 @@
             "side_effects": false,
             "tier": "Low",
             "hex": "0x04",
-            "gas": 5,
-            "description": "Integer division operation."
+            "description": "Integer division operation",
+            "gas": 5
         },
-        {"hex": "0x4", "mnemonic": "DIV", "description": "Integer division operation"},
         {
-            "hex": "0x05",
             "mnemonic": "SDIV",
             "additional_items": 0,
             "pops": 2,
             "pushes": 1,
-            "gas": 5,
-            "description": "Signed integer division operation (truncated)."
+            "side_effects": false,
+            "tier": "Low",
+            "hex": "0x05",
+            "description": "Signed integer division operation",
+            "gas": 5
         },
         {
-            "hex": "0x5",
-            "mnemonic": "SDIV",
-            "description": "Signed integer division operation"
-        },
-        {"hex": "0x6", "mnemonic": "MOD", "description": "Modulo remainder operation"},
-        {
-            "hex": "0x06",
             "mnemonic": "MOD",
             "additional_items": 0,
             "pops": 2,
             "pushes": 1,
-            "gas": 5,
-            "description": "Modulo remainder operation."
+            "side_effects": false,
+            "tier": "Low",
+            "hex": "0x06",
+            "description": "Modulo remainder operation",
+            "gas": 5
         },
         {
-            "hex": "0x7",
-            "mnemonic": "SMOD",
-            "description": "Signed modulo remainder operation"
-        },
-        {
-            "hex": "0x07",
             "mnemonic": "SMOD",
             "additional_items": 0,
             "pops": 2,
             "pushes": 1,
-            "gas": 5,
-            "description": "Signed modulo remainder operation."
+            "side_effects": false,
+            "tier": "Low",
+            "hex": "0x07",
+            "description": "Signed modulo remainder operation",
+            "gas": 5
         },
-        {"hex": "0x8", "mnemonic": "ADDMOD", "description": "Unsigned modular addition"},
         {
-            "hex": "0x08",
             "mnemonic": "ADDMOD",
             "additional_items": 0,
             "pops": 3,
             "pushes": 1,
-            "gas": 8,
-            "description": "Modulo addition operation."
+            "side_effects": false,
+            "tier": "Mid",
+            "hex": "0x08",
+            "description": "Unsigned modular addition",
+            "gas": 8
+        },
+        {
+            "mnemonic": "MULMOD",
+            "additional_items": 0,
+            "pops": 3,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "Mid",
+            "hex": "0x09",
+            "description": "Unsigned modular multiplication",
+            "gas": 8
+        },
+        {
+            "mnemonic": "EXP",
+            "additional_items": 0,
+            "pops": 2,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "Special",
+            "hex": "0x0a",
+            "description": "Exponential operation",
+            "gas": 10
+        },
+        {
+            "mnemonic": "SIGNEXTEND",
+            "additional_items": 0,
+            "pops": 2,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "Low",
+            "hex": "0x0b",
+            "description": "Extend length of signed integer",
+            "gas": 5
+        },
+        {
+            "mnemonic": "SELFDESTRUCT",
+            "additional_items": 0,
+            "pops": 1,
+            "pushes": 0,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xf",
+            "description": "Halt execution and register account for later deletion"
+        },
+        {
+            "mnemonic": "LT",
+            "additional_items": 0,
+            "pops": 2,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x10",
+            "description": "Less-than comparison",
+            "gas": 3
+        },
+        {
+            "mnemonic": "GT",
+            "additional_items": 0,
+            "pops": 2,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x11",
+            "description": "Greater-than comparison",
+            "gas": 3
+        },
+        {
+            "mnemonic": "SLT",
+            "additional_items": 0,
+            "pops": 2,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x12",
+            "description": "Signed less-than comparison",
+            "gas": 3
+        },
+        {
+            "mnemonic": "SGT",
+            "additional_items": 0,
+            "pops": 2,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x13",
+            "description": "Signed greater-than comparison",
+            "gas": 3
         },
         {
             "mnemonic": "EQ",
@@ -158,7 +299,10 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x14",
+            "description": "Equality comparison",
+            "gas": 3
         },
         {
             "mnemonic": "ISZERO",
@@ -166,7 +310,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x15",
+            "description": "Simple not operator",
+            "gas": 3
         },
         {
             "mnemonic": "AND",
@@ -174,7 +321,10 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x16",
+            "description": "Bitwise AND operation",
+            "gas": 3
         },
         {
             "mnemonic": "OR",
@@ -182,7 +332,10 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x17",
+            "description": "Bitwise OR operation",
+            "gas": 3
         },
         {
             "mnemonic": "XOR",
@@ -190,7 +343,21 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x18",
+            "description": "Bitwise XOR operation",
+            "gas": 3
+        },
+        {
+            "mnemonic": "NOT",
+            "additional_items": 0,
+            "pops": 1,
+            "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x19",
+            "description": "Bitwise NOT operation",
+            "gas": 3
         },
         {
             "mnemonic": "BYTE",
@@ -198,7 +365,10 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x1a",
+            "description": "Retrieve single byte from word",
+            "gas": 3
         },
         {
             "mnemonic": "SHL",
@@ -206,7 +376,9 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x1b",
+            "description": "Bitwise SHL operation"
         },
         {
             "mnemonic": "SHR",
@@ -214,7 +386,9 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x1c",
+            "description": "Bitwise SHR operation"
         },
         {
             "mnemonic": "SAR",
@@ -222,31 +396,9 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "ADDMOD",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Mid"
-        },
-        {
-            "mnemonic": "MULMOD",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Mid"
-        },
-        {
-            "mnemonic": "SIGNEXTEND",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Low"
+            "tier": "VeryLow",
+            "hex": "0x1d",
+            "description": "Bitwise SAR operation"
         },
         {
             "mnemonic": "KECCAK256",
@@ -254,7 +406,10 @@
             "pops": 2,
             "pushes": 1,
             "side_effects": true,
-            "tier": "Special"
+            "tier": "Special",
+            "hex": "0x20",
+            "description": "Compute KECCAK-256 hash",
+            "gas": 30
         },
         {
             "mnemonic": "ADDRESS",
@@ -262,7 +417,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x30",
+            "description": "Get address of currently executing account",
+            "gas": 2
         },
         {
             "mnemonic": "BALANCE",
@@ -270,7 +428,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Balance"
+            "tier": "Balance",
+            "hex": "0x31",
+            "description": "Get balance of the given account",
+            "gas": 20
         },
         {
             "mnemonic": "ORIGIN",
@@ -278,7 +439,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x32",
+            "description": "Get execution origination address",
+            "gas": 2
         },
         {
             "mnemonic": "CALLER",
@@ -286,7 +450,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x33",
+            "description": "Get caller address",
+            "gas": 2
         },
         {
             "mnemonic": "CALLVALUE",
@@ -294,7 +461,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x34",
+            "description": "Get deposited value by the instruction/transaction responsible for this execution",
+            "gas": 2
         },
         {
             "mnemonic": "CALLDATALOAD",
@@ -302,7 +472,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x35",
+            "description": "Get input data of current environment",
+            "gas": 3
         },
         {
             "mnemonic": "CALLDATASIZE",
@@ -310,7 +483,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x36",
+            "description": "Get size of input data in current environment",
+            "gas": 2
         },
         {
             "mnemonic": "CALLDATACOPY",
@@ -318,7 +494,10 @@
             "pops": 3,
             "pushes": 0,
             "side_effects": true,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x37",
+            "description": "Copy input data in current environment to memory",
+            "gas": 3
         },
         {
             "mnemonic": "CODESIZE",
@@ -326,7 +505,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x38",
+            "description": "Get size of code running in current environment",
+            "gas": 2
         },
         {
             "mnemonic": "CODECOPY",
@@ -334,7 +516,10 @@
             "pops": 3,
             "pushes": 0,
             "side_effects": true,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x39",
+            "description": "Copy code running in current environment to memory",
+            "gas": 3
         },
         {
             "mnemonic": "GASPRICE",
@@ -342,7 +527,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x3a",
+            "description": "Get price of gas in current environment",
+            "gas": 2
         },
         {
             "mnemonic": "EXTCODESIZE",
@@ -350,7 +538,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": false,
-            "tier": "ExtCode"
+            "tier": "ExtCode",
+            "hex": "0x3b",
+            "description": "Get external code size (from another contract)",
+            "gas": 20
         },
         {
             "mnemonic": "EXTCODECOPY",
@@ -358,7 +549,10 @@
             "pops": 4,
             "pushes": 0,
             "side_effects": true,
-            "tier": "ExtCode"
+            "tier": "ExtCode",
+            "hex": "0x3c",
+            "description": "Copy external code (from another contract)",
+            "gas": 20
         },
         {
             "mnemonic": "RETURNDATASIZE",
@@ -366,7 +560,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x3d",
+            "description": "Get size of return data buffer",
+            "gas": 2
         },
         {
             "mnemonic": "RETURNDATACOPY",
@@ -374,7 +571,10 @@
             "pops": 3,
             "pushes": 0,
             "side_effects": true,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x3e",
+            "description": "Copy return data in current environment to memory",
+            "gas": 3
         },
         {
             "mnemonic": "BLOCKHASH",
@@ -382,7 +582,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Ext"
+            "tier": "Ext",
+            "hex": "0x40",
+            "description": "Get hash of most recent complete block",
+            "gas": 20
         },
         {
             "mnemonic": "COINBASE",
@@ -390,7 +593,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x41",
+            "description": "Get the block's coinbase address",
+            "gas": 2
         },
         {
             "mnemonic": "TIMESTAMP",
@@ -398,7 +604,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x42",
+            "description": "Get the block's timestamp",
+            "gas": 2
         },
         {
             "mnemonic": "NUMBER",
@@ -406,7 +615,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x43",
+            "description": "Get the block's number",
+            "gas": 2
         },
         {
             "mnemonic": "DIFFICULTY",
@@ -414,7 +626,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x44",
+            "description": "Get the block's difficulty",
+            "gas": 2
         },
         {
             "mnemonic": "GASLIMIT",
@@ -422,7 +637,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x45",
+            "description": "Get the block's gas limit",
+            "gas": 2
         },
         {
             "mnemonic": "POP",
@@ -430,7 +648,10 @@
             "pops": 1,
             "pushes": 0,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x50",
+            "description": "Remove item from stack",
+            "gas": 2
         },
         {
             "mnemonic": "MLOAD",
@@ -438,7 +659,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": true,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x51",
+            "description": "Load word from memory",
+            "gas": 3
         },
         {
             "mnemonic": "MSTORE",
@@ -446,7 +670,10 @@
             "pops": 2,
             "pushes": 0,
             "side_effects": true,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x52",
+            "description": "Save word to memory",
+            "gas": 3
         },
         {
             "mnemonic": "MSTORE8",
@@ -454,7 +681,10 @@
             "pops": 2,
             "pushes": 0,
             "side_effects": true,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x53",
+            "description": "Save byte to memory",
+            "gas": 3
         },
         {
             "mnemonic": "SLOAD",
@@ -462,7 +692,10 @@
             "pops": 1,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Special"
+            "tier": "Special",
+            "hex": "0x54",
+            "description": "Load word from storage",
+            "gas": 50
         },
         {
             "mnemonic": "SSTORE",
@@ -470,7 +703,10 @@
             "pops": 2,
             "pushes": 0,
             "side_effects": true,
-            "tier": "Special"
+            "tier": "Special",
+            "hex": "0x55",
+            "description": "Save word to storage",
+            "gas": 0
         },
         {
             "mnemonic": "JUMP",
@@ -478,7 +714,10 @@
             "pops": 1,
             "pushes": 0,
             "side_effects": true,
-            "tier": "Mid"
+            "tier": "Mid",
+            "hex": "0x56",
+            "description": "Alter the program counter",
+            "gas": 8
         },
         {
             "mnemonic": "JUMPI",
@@ -486,7 +725,10 @@
             "pops": 2,
             "pushes": 0,
             "side_effects": true,
-            "tier": "High"
+            "tier": "High",
+            "hex": "0x57",
+            "description": "Conditionally alter the program counter",
+            "gas": 10
         },
         {
             "mnemonic": "PC",
@@ -494,7 +736,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x58",
+            "description": "Get the program counter",
+            "gas": 2
         },
         {
             "mnemonic": "MSIZE",
@@ -502,7 +747,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x59",
+            "description": "Get the size of active memory",
+            "gas": 2
         },
         {
             "mnemonic": "GAS",
@@ -510,7 +758,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "Base"
+            "tier": "Base",
+            "hex": "0x5a",
+            "description": "Get the amount of available gas",
+            "gas": 2
         },
         {
             "mnemonic": "JUMPDEST",
@@ -518,7 +769,10 @@
             "pops": 0,
             "pushes": 0,
             "side_effects": true,
-            "tier": "Special"
+            "tier": "Special",
+            "hex": "0x5b",
+            "description": "Set a potential jump destination",
+            "gas": 1
         },
         {
             "mnemonic": "PUSH1",
@@ -526,7 +780,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x60",
+            "description": "Place 1 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH2",
@@ -534,7 +791,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x61",
+            "description": "Place 2 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH3",
@@ -542,7 +802,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x62",
+            "description": "Place 3 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH4",
@@ -550,7 +813,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x63",
+            "description": "Place 4 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH5",
@@ -558,7 +824,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x64",
+            "description": "Place 5 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH6",
@@ -566,7 +835,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x65",
+            "description": "Place 6 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH7",
@@ -574,7 +846,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
+            "tier": "VeryLow",
+            "hex": "0x66",
+            "description": "Place 7 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH8",
@@ -582,564 +857,10 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "hex": "0x9",
-            "mnemonic": "MULMOD",
-            "description": "Unsigned modular multiplication"
-        },
-        {
-            "mnemonic": "PUSH10",
-            "additional_items": 10,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH11",
-            "additional_items": 11,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH12",
-            "additional_items": 12,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH13",
-            "additional_items": 13,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH14",
-            "additional_items": 14,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH15",
-            "additional_items": 15,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH16",
-            "additional_items": 16,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH17",
-            "additional_items": 17,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH18",
-            "additional_items": 18,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH19",
-            "additional_items": 19,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH20",
-            "additional_items": 20,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH21",
-            "additional_items": 21,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH22",
-            "additional_items": 22,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH23",
-            "additional_items": 23,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH24",
-            "additional_items": 24,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH25",
-            "additional_items": 25,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH26",
-            "additional_items": 26,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH27",
-            "additional_items": 27,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH28",
-            "additional_items": 28,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH29",
-            "additional_items": 29,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH30",
-            "additional_items": 30,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH31",
-            "additional_items": 31,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "PUSH32",
-            "additional_items": 32,
-            "pops": 0,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP1",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 2,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP2",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 3,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP3",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 4,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP4",
-            "additional_items": 0,
-            "pops": 4,
-            "pushes": 5,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP5",
-            "additional_items": 0,
-            "pops": 5,
-            "pushes": 6,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP6",
-            "additional_items": 0,
-            "pops": 6,
-            "pushes": 7,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP7",
-            "additional_items": 0,
-            "pops": 7,
-            "pushes": 8,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP8",
-            "additional_items": 0,
-            "pops": 8,
-            "pushes": 9,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP9",
-            "additional_items": 0,
-            "pops": 9,
-            "pushes": 10,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP10",
-            "additional_items": 0,
-            "pops": 10,
-            "pushes": 11,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP11",
-            "additional_items": 0,
-            "pops": 11,
-            "pushes": 12,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP12",
-            "additional_items": 0,
-            "pops": 12,
-            "pushes": 13,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP13",
-            "additional_items": 0,
-            "pops": 13,
-            "pushes": 14,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP14",
-            "additional_items": 0,
-            "pops": 14,
-            "pushes": 15,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP15",
-            "additional_items": 0,
-            "pops": 15,
-            "pushes": 16,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "DUP16",
-            "additional_items": 0,
-            "pops": 16,
-            "pushes": 17,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP1",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 2,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP2",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 3,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP3",
-            "additional_items": 0,
-            "pops": 4,
-            "pushes": 4,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP4",
-            "additional_items": 0,
-            "pops": 5,
-            "pushes": 5,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP5",
-            "additional_items": 0,
-            "pops": 6,
-            "pushes": 6,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP6",
-            "additional_items": 0,
-            "pops": 7,
-            "pushes": 7,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP7",
-            "additional_items": 0,
-            "pops": 8,
-            "pushes": 8,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP8",
-            "additional_items": 0,
-            "pops": 9,
-            "pushes": 9,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP9",
-            "additional_items": 0,
-            "pops": 10,
-            "pushes": 10,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP10",
-            "additional_items": 0,
-            "pops": 11,
-            "pushes": 11,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP11",
-            "additional_items": 0,
-            "pops": 12,
-            "pushes": 12,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP12",
-            "additional_items": 0,
-            "pops": 13,
-            "pushes": 13,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP13",
-            "additional_items": 0,
-            "pops": 14,
-            "pushes": 14,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP14",
-            "additional_items": 0,
-            "pops": 15,
-            "pushes": 15,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP15",
-            "additional_items": 0,
-            "pops": 16,
-            "pushes": 16,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SWAP16",
-            "additional_items": 0,
-            "pops": 17,
-            "pushes": 17,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "LOG0",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "LOG1",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "LOG2",
-            "additional_items": 0,
-            "pops": 4,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "LOG3",
-            "additional_items": 0,
-            "pops": 5,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "LOG4",
-            "additional_items": 0,
-            "pops": 6,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "CREATE",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 1,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "CALL",
-            "additional_items": 0,
-            "pops": 7,
-            "pushes": 1,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "CALLCODE",
-            "additional_items": 0,
-            "pops": 7,
-            "pushes": 1,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "RETURN",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Zero"
-        },
-        {
-            "mnemonic": "DELEGATECALL",
-            "additional_items": 0,
-            "pops": 6,
-            "pushes": 1,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "STATICCALL",
-            "additional_items": 0,
-            "pops": 6,
-            "pushes": 1,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "CREATE2",
-            "additional_items": 0,
-            "pops": 4,
-            "pushes": 1,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "REVERT",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Zero"
-        },
-        {
-            "mnemonic": "INVALID",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Zero"
+            "tier": "VeryLow",
+            "hex": "0x67",
+            "description": "Place 8 byte item on stack",
+            "gas": 0
         },
         {
             "mnemonic": "PUSH9",
@@ -1147,1153 +868,669 @@
             "pops": 0,
             "pushes": 1,
             "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SDIV",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Low"
-        },
-        {
-            "mnemonic": "SELFDESTRUCT",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 0,
-            "side_effects": true,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "MOD",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Low"
-        },
-        {
-            "mnemonic": "SMOD",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Low"
-        },
-        {
-            "mnemonic": "EXP",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "Special"
-        },
-        {
-            "mnemonic": "NOT",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "hex": "0x09",
-            "mnemonic": "MULMOD",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 1,
-            "gas": 8,
-            "description": "Modulo multiplication operation."
-        },
-        {
-            "mnemonic": "LT",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "GT",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SLT",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {
-            "mnemonic": "SGT",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "side_effects": false,
-            "tier": "VeryLow"
-        },
-        {"hex": "0xa", "mnemonic": "EXP", "description": "Exponential operation"},
-        {
-            "hex": "0x0a",
-            "mnemonic": "EXP",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 10,
-            "description": "Exponential operation."
-        },
-        {
-            "hex": "0xb",
-            "mnemonic": "SIGNEXTEND",
-            "description": "Extend length of signed integer"
-        },
-        {
-            "hex": "0x0b",
-            "mnemonic": "SIGNEXTEND",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 5,
-            "description": "Extend length of twos complement signed integer."
-        },
-        {
-            "hex": "0xf",
-            "mnemonic": "SELFDESTRUCT",
-            "description": "Halt execution and register account for later deletion"
-        },
-        {
-            "hex": "0x10",
-            "mnemonic": "LT",
-            "description": "Less-than comparison",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x11",
-            "mnemonic": "GT",
-            "description": "Greater-than comparison",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x12",
-            "mnemonic": "SLT",
-            "description": "Signed less-than comparison",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x13",
-            "mnemonic": "SGT",
-            "description": "Signed greater-than comparison",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x14",
-            "mnemonic": "EQ",
-            "description": "Equality comparison",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x15",
-            "mnemonic": "ISZERO",
-            "description": "Simple not operator",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x16",
-            "mnemonic": "AND",
-            "description": "Bitwise AND operation",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x17",
-            "mnemonic": "OR",
-            "description": "Bitwise OR operation",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x18",
-            "mnemonic": "XOR",
-            "description": "Bitwise XOR operation",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x19",
-            "mnemonic": "NOT",
-            "description": "Bitwise NOT operation",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x1a",
-            "mnemonic": "BYTE",
-            "description": "Retrieve single byte from word",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 3
-        },
-        {"hex": "0x1b", "mnemonic": "SHL", "description": "Bitwise SHL operation"},
-        {"hex": "0x1c", "mnemonic": "SHR", "description": "Bitwise SHR operation"},
-        {"hex": "0x1d", "mnemonic": "SAR", "description": "Bitwise SAR operation"},
-        {
-            "hex": "0x20",
-            "mnemonic": "SHA3",
-            "description": "Compute KECCAK-256 hash",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 1,
-            "gas": 30
-        },
-        {
-            "hex": "0x30",
-            "mnemonic": "ADDRESS",
-            "description": "Get address of currently executing account",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x31",
-            "mnemonic": "BALANCE",
-            "description": "Get balance of the given account",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 20
-        },
-        {
-            "hex": "0x32",
-            "mnemonic": "ORIGIN",
-            "description": "Get execution origination address",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x33",
-            "mnemonic": "CALLER",
-            "description": "Get caller address",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x34",
-            "mnemonic": "CALLVALUE",
-            "description": "Get deposited value by the instruction/transaction responsible for this execution",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x35",
-            "mnemonic": "CALLDATALOAD",
-            "description": "Get input data of current environment",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x36",
-            "mnemonic": "CALLDATASIZE",
-            "description": "Get size of input data in current environment",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x37",
-            "mnemonic": "CALLDATACOPY",
-            "description": "Copy input data in current environment to memory",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 0,
-            "gas": 3
-        },
-        {
-            "hex": "0x38",
-            "mnemonic": "CODESIZE",
-            "description": "Get size of code running in current environment",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x39",
-            "mnemonic": "CODECOPY",
-            "description": "Copy code running in current environment to memory",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 0,
-            "gas": 3
-        },
-        {
-            "hex": "0x3a",
-            "mnemonic": "GASPRICE",
-            "description": "Get price of gas in current environment",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x3b",
-            "mnemonic": "EXTCODESIZE",
-            "description": "Get external code size (from another contract)",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 20
-        },
-        {
-            "hex": "0x3c",
-            "mnemonic": "EXTCODECOPY",
-            "description": "Copy external code (from another contract)",
-            "additional_items": 0,
-            "pops": 4,
-            "pushes": 0,
-            "gas": 20
-        },
-        {
-            "hex": "0x3d",
-            "mnemonic": "RETURNDATASIZE",
-            "description": "Get size of return data buffer",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x3e",
-            "mnemonic": "RETURNDATACOPY",
-            "description": "Copy return data in current environment to memory",
-            "additional_items": 0,
-            "pops": 3,
-            "pushes": 0,
-            "gas": 3
-        },
-        {
-            "hex": "0x40",
-            "mnemonic": "BLOCKHASH",
-            "description": "Get hash of most recent complete block",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 20
-        },
-        {
-            "hex": "0x41",
-            "mnemonic": "COINBASE",
-            "description": "Get the block's coinbase address",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x42",
-            "mnemonic": "TIMESTAMP",
-            "description": "Get the block's timestamp",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x43",
-            "mnemonic": "NUMBER",
-            "description": "Get the block's number",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x44",
-            "mnemonic": "DIFFICULTY",
-            "description": "Get the block's difficulty",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x45",
-            "mnemonic": "GASLIMIT",
-            "description": "Get the block's gas limit",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x50",
-            "mnemonic": "POP",
-            "description": "Remove item from stack",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 0,
-            "gas": 2
-        },
-        {
-            "hex": "0x51",
-            "mnemonic": "MLOAD",
-            "description": "Load word from memory",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 3
-        },
-        {
-            "hex": "0x52",
-            "mnemonic": "MSTORE",
-            "description": "Save word to memory",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "gas": 3
-        },
-        {
-            "hex": "0x53",
-            "mnemonic": "MSTORE8",
-            "description": "Save byte to memory",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "gas": 3
-        },
-        {
-            "hex": "0x54",
-            "mnemonic": "SLOAD",
-            "description": "Load word from storage",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 1,
-            "gas": 50
-        },
-        {
-            "hex": "0x55",
-            "mnemonic": "SSTORE",
-            "description": "Save word to storage",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "gas": 0
-        },
-        {
-            "hex": "0x56",
-            "mnemonic": "JUMP",
-            "description": "Alter the program counter",
-            "additional_items": 0,
-            "pops": 1,
-            "pushes": 0,
-            "gas": 8
-        },
-        {
-            "hex": "0x57",
-            "mnemonic": "JUMPI",
-            "description": "Conditionally alter the program counter",
-            "additional_items": 0,
-            "pops": 2,
-            "pushes": 0,
-            "gas": 10
-        },
-        {
-            "hex": "0x58",
-            "mnemonic": "GETPC",
-            "description": "Get the program counter",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x59",
-            "mnemonic": "MSIZE",
-            "description": "Get the size of active memory",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x5a",
-            "mnemonic": "GAS",
-            "description": "Get the amount of available gas",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 2
-        },
-        {
-            "hex": "0x5b",
-            "mnemonic": "JUMPDEST",
-            "description": "Set a potential jump destination",
-            "additional_items": 0,
-            "pops": 0,
-            "pushes": 0,
-            "gas": 1
-        },
-        {
-            "hex": "0x60",
-            "mnemonic": "PUSH",
-            "description": "Place 1 byte item on stack",
-            "additional_items": 1,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x61",
-            "mnemonic": "PUSH",
-            "description": "Place 2 byte item on stack",
-            "additional_items": 2,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x62",
-            "mnemonic": "PUSH",
-            "description": "Place 3 byte item on stack",
-            "additional_items": 3,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x63",
-            "mnemonic": "PUSH",
-            "description": "Place 4 byte item on stack",
-            "additional_items": 4,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x64",
-            "mnemonic": "PUSH",
-            "description": "Place 5 byte item on stack",
-            "additional_items": 5,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x65",
-            "mnemonic": "PUSH",
-            "description": "Place 6 byte item on stack",
-            "additional_items": 6,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x66",
-            "mnemonic": "PUSH",
-            "description": "Place 7 byte item on stack",
-            "additional_items": 7,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
-            "hex": "0x67",
-            "mnemonic": "PUSH",
-            "description": "Place 8 byte item on stack",
-            "additional_items": 8,
-            "pops": 0,
-            "pushes": 1,
-            "gas": 0
-        },
-        {
+            "tier": "VeryLow",
             "hex": "0x68",
-            "mnemonic": "PUSH",
             "description": "Place 9 byte item on stack",
-            "additional_items": 9,
-            "pops": 0,
-            "pushes": 1,
             "gas": 0
         },
         {
-            "hex": "0x69",
-            "mnemonic": "PUSH",
-            "description": "Place 10 byte item on stack",
+            "mnemonic": "PUSH10",
             "additional_items": 10,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x69",
+            "description": "Place 10 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x6a",
-            "mnemonic": "PUSH",
-            "description": "Place 11 byte item on stack",
+            "mnemonic": "PUSH11",
             "additional_items": 11,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x6a",
+            "description": "Place 11 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x6b",
-            "mnemonic": "PUSH",
-            "description": "Place 12 byte item on stack",
+            "mnemonic": "PUSH12",
             "additional_items": 12,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x6b",
+            "description": "Place 12 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x6c",
-            "mnemonic": "PUSH",
-            "description": "Place 13 byte item on stack",
+            "mnemonic": "PUSH13",
             "additional_items": 13,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x6c",
+            "description": "Place 13 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x6d",
-            "mnemonic": "PUSH",
-            "description": "Place 14 byte item on stack",
+            "mnemonic": "PUSH14",
             "additional_items": 14,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x6d",
+            "description": "Place 14 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x6e",
-            "mnemonic": "PUSH",
-            "description": "Place 15 byte item on stack",
+            "mnemonic": "PUSH15",
             "additional_items": 15,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x6e",
+            "description": "Place 15 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x6f",
-            "mnemonic": "PUSH",
-            "description": "Place 16 byte item on stack",
+            "mnemonic": "PUSH16",
             "additional_items": 16,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x6f",
+            "description": "Place 16 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x70",
-            "mnemonic": "PUSH",
-            "description": "Place 17 byte item on stack",
+            "mnemonic": "PUSH17",
             "additional_items": 17,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x70",
+            "description": "Place 17 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x71",
-            "mnemonic": "PUSH",
-            "description": "Place 18 byte item on stack",
+            "mnemonic": "PUSH18",
             "additional_items": 18,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x71",
+            "description": "Place 18 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x72",
-            "mnemonic": "PUSH",
-            "description": "Place 19 byte item on stack",
+            "mnemonic": "PUSH19",
             "additional_items": 19,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x72",
+            "description": "Place 19 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x73",
-            "mnemonic": "PUSH",
-            "description": "Place 20 byte item on stack",
+            "mnemonic": "PUSH20",
             "additional_items": 20,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x73",
+            "description": "Place 20 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x74",
-            "mnemonic": "PUSH",
-            "description": "Place 21 byte item on stack",
+            "mnemonic": "PUSH21",
             "additional_items": 21,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x74",
+            "description": "Place 21 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x75",
-            "mnemonic": "PUSH",
-            "description": "Place 22 byte item on stack",
+            "mnemonic": "PUSH22",
             "additional_items": 22,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x75",
+            "description": "Place 22 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x76",
-            "mnemonic": "PUSH",
-            "description": "Place 23 byte item on stack",
+            "mnemonic": "PUSH23",
             "additional_items": 23,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x76",
+            "description": "Place 23 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x77",
-            "mnemonic": "PUSH",
-            "description": "Place 24 byte item on stack",
+            "mnemonic": "PUSH24",
             "additional_items": 24,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x77",
+            "description": "Place 24 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x78",
-            "mnemonic": "PUSH",
-            "description": "Place 25 byte item on stack",
+            "mnemonic": "PUSH25",
             "additional_items": 25,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x78",
+            "description": "Place 25 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x79",
-            "mnemonic": "PUSH",
-            "description": "Place 26 byte item on stack",
+            "mnemonic": "PUSH26",
             "additional_items": 26,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x79",
+            "description": "Place 26 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x7a",
-            "mnemonic": "PUSH",
-            "description": "Place 27 byte item on stack",
+            "mnemonic": "PUSH27",
             "additional_items": 27,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x7a",
+            "description": "Place 27 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x7b",
-            "mnemonic": "PUSH",
-            "description": "Place 28 byte item on stack",
+            "mnemonic": "PUSH28",
             "additional_items": 28,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x7b",
+            "description": "Place 28 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x7c",
-            "mnemonic": "PUSH",
-            "description": "Place 29 byte item on stack",
+            "mnemonic": "PUSH29",
             "additional_items": 29,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x7c",
+            "description": "Place 29 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x7d",
-            "mnemonic": "PUSH",
-            "description": "Place 30 byte item on stack",
+            "mnemonic": "PUSH30",
             "additional_items": 30,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x7d",
+            "description": "Place 30 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x7e",
-            "mnemonic": "PUSH",
-            "description": "Place 31 byte item on stack",
+            "mnemonic": "PUSH31",
             "additional_items": 31,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x7e",
+            "description": "Place 31 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x7f",
-            "mnemonic": "PUSH",
-            "description": "Place 32 byte item on stack",
+            "mnemonic": "PUSH32",
             "additional_items": 32,
             "pops": 0,
             "pushes": 1,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x7f",
+            "description": "Place 32 byte item on stack",
             "gas": 0
         },
         {
-            "hex": "0x80",
-            "mnemonic": "DUP",
-            "description": "Copies the highest item in the stack to the top of the stack",
+            "mnemonic": "DUP1",
             "additional_items": 0,
             "pops": 1,
             "pushes": 2,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x80",
+            "description": "Copies the highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x81",
-            "mnemonic": "DUP",
-            "description": "Copies the second highest item in the stack to the top of the stack",
+            "mnemonic": "DUP2",
             "additional_items": 0,
             "pops": 2,
             "pushes": 3,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x81",
+            "description": "Copies the second highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x82",
-            "mnemonic": "DUP",
-            "description": "Copies the third highest item in the stack to the top of the stack",
+            "mnemonic": "DUP3",
             "additional_items": 0,
             "pops": 3,
             "pushes": 4,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x82",
+            "description": "Copies the third highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x83",
-            "mnemonic": "DUP",
-            "description": "Copies the 4th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP4",
             "additional_items": 0,
             "pops": 4,
             "pushes": 5,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x83",
+            "description": "Copies the 4th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x84",
-            "mnemonic": "DUP",
-            "description": "Copies the 5th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP5",
             "additional_items": 0,
             "pops": 5,
             "pushes": 6,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x84",
+            "description": "Copies the 5th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x85",
-            "mnemonic": "DUP",
-            "description": "Copies the 6th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP6",
             "additional_items": 0,
             "pops": 6,
             "pushes": 7,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x85",
+            "description": "Copies the 6th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x86",
-            "mnemonic": "DUP",
-            "description": "Copies the 7th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP7",
             "additional_items": 0,
             "pops": 7,
             "pushes": 8,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x86",
+            "description": "Copies the 7th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x87",
-            "mnemonic": "DUP",
-            "description": "Copies the 8th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP8",
             "additional_items": 0,
             "pops": 8,
             "pushes": 9,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x87",
+            "description": "Copies the 8th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x88",
-            "mnemonic": "DUP",
-            "description": "Copies the 9th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP9",
             "additional_items": 0,
             "pops": 9,
             "pushes": 10,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x88",
+            "description": "Copies the 9th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x89",
-            "mnemonic": "DUP",
-            "description": "Copies the 10th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP10",
             "additional_items": 0,
             "pops": 10,
             "pushes": 11,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x89",
+            "description": "Copies the 10th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x8a",
-            "mnemonic": "DUP",
-            "description": "Copies the 11th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP11",
             "additional_items": 0,
             "pops": 11,
             "pushes": 12,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x8a",
+            "description": "Copies the 11th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x8b",
-            "mnemonic": "DUP",
-            "description": "Copies the 12th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP12",
             "additional_items": 0,
             "pops": 12,
             "pushes": 13,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x8b",
+            "description": "Copies the 12th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x8c",
-            "mnemonic": "DUP",
-            "description": "Copies the 13th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP13",
             "additional_items": 0,
             "pops": 13,
             "pushes": 14,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x8c",
+            "description": "Copies the 13th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x8d",
-            "mnemonic": "DUP",
-            "description": "Copies the 14th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP14",
             "additional_items": 0,
             "pops": 14,
             "pushes": 15,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x8d",
+            "description": "Copies the 14th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x8e",
-            "mnemonic": "DUP",
-            "description": "Copies the 15th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP15",
             "additional_items": 0,
             "pops": 15,
             "pushes": 16,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x8e",
+            "description": "Copies the 15th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x8f",
-            "mnemonic": "DUP",
-            "description": "Copies the 16th highest item in the stack to the top of the stack",
+            "mnemonic": "DUP16",
             "additional_items": 0,
             "pops": 16,
             "pushes": 17,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x8f",
+            "description": "Copies the 16th highest item in the stack to the top of the stack",
             "gas": 3
         },
         {
-            "hex": "0x90",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and second highest value on the stack",
+            "mnemonic": "SWAP1",
             "additional_items": 0,
             "pops": 2,
             "pushes": 2,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x90",
+            "description": "Swaps the highest and second highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x91",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and third highest value on the stack",
+            "mnemonic": "SWAP2",
             "additional_items": 0,
             "pops": 3,
             "pushes": 3,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x91",
+            "description": "Swaps the highest and third highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x92",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 4th highest value on the stack",
+            "mnemonic": "SWAP3",
             "additional_items": 0,
             "pops": 4,
             "pushes": 4,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x92",
+            "description": "Swaps the highest and 4th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x93",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 5th highest value on the stack",
+            "mnemonic": "SWAP4",
             "additional_items": 0,
             "pops": 5,
             "pushes": 5,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x93",
+            "description": "Swaps the highest and 5th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x94",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 6th highest value on the stack",
+            "mnemonic": "SWAP5",
             "additional_items": 0,
             "pops": 6,
             "pushes": 6,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x94",
+            "description": "Swaps the highest and 6th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x95",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 7th highest value on the stack",
+            "mnemonic": "SWAP6",
             "additional_items": 0,
             "pops": 7,
             "pushes": 7,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x95",
+            "description": "Swaps the highest and 7th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x96",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 8th highest value on the stack",
+            "mnemonic": "SWAP7",
             "additional_items": 0,
             "pops": 8,
             "pushes": 8,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x96",
+            "description": "Swaps the highest and 8th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x97",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 9th highest value on the stack",
+            "mnemonic": "SWAP8",
             "additional_items": 0,
             "pops": 9,
             "pushes": 9,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x97",
+            "description": "Swaps the highest and 9th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x98",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 10th highest value on the stack",
+            "mnemonic": "SWAP9",
             "additional_items": 0,
             "pops": 10,
             "pushes": 10,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x98",
+            "description": "Swaps the highest and 10th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x99",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 11th highest value on the stack",
+            "mnemonic": "SWAP10",
             "additional_items": 0,
             "pops": 11,
             "pushes": 11,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x99",
+            "description": "Swaps the highest and 11th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x9a",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 12th highest value on the stack",
+            "mnemonic": "SWAP11",
             "additional_items": 0,
             "pops": 12,
             "pushes": 12,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x9a",
+            "description": "Swaps the highest and 12th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x9b",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 13th highest value on the stack",
+            "mnemonic": "SWAP12",
             "additional_items": 0,
             "pops": 13,
             "pushes": 13,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x9b",
+            "description": "Swaps the highest and 13th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x9c",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 14th highest value on the stack",
+            "mnemonic": "SWAP13",
             "additional_items": 0,
             "pops": 14,
             "pushes": 14,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x9c",
+            "description": "Swaps the highest and 14th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x9d",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 15th highest value on the stack",
+            "mnemonic": "SWAP14",
             "additional_items": 0,
             "pops": 15,
             "pushes": 15,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x9d",
+            "description": "Swaps the highest and 15th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x9e",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 16th highest value on the stack",
+            "mnemonic": "SWAP15",
             "additional_items": 0,
             "pops": 16,
             "pushes": 16,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x9e",
+            "description": "Swaps the highest and 16th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0x9f",
-            "mnemonic": "SWAP",
-            "description": "Swaps the highest and 17th highest value on the stack",
+            "mnemonic": "SWAP16",
             "additional_items": 0,
             "pops": 17,
             "pushes": 17,
+            "side_effects": false,
+            "tier": "VeryLow",
+            "hex": "0x9f",
+            "description": "Swaps the highest and 17th highest value on the stack",
             "gas": 3
         },
         {
-            "hex": "0xa0",
-            "mnemonic": "LOG",
-            "description": "Makes a log entry; no topics.",
+            "mnemonic": "LOG0",
             "additional_items": 0,
             "pops": 2,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xa0",
+            "description": "Makes a log entry; no topics.",
             "gas": 375
         },
         {
-            "hex": "0xa1",
-            "mnemonic": "LOG",
-            "description": "Makes a log entry; 1 topic.",
+            "mnemonic": "LOG1",
             "additional_items": 0,
             "pops": 3,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xa1",
+            "description": "Makes a log entry; 1 topic.",
             "gas": 750
         },
         {
-            "hex": "0xa2",
-            "mnemonic": "LOG",
-            "description": "Makes a log entry; 2 topics.",
+            "mnemonic": "LOG2",
             "additional_items": 0,
             "pops": 4,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xa2",
+            "description": "Makes a log entry; 2 topics.",
             "gas": 1125
         },
         {
-            "hex": "0xa3",
-            "mnemonic": "LOG",
-            "description": "Makes a log entry; 3 topics.",
+            "mnemonic": "LOG3",
             "additional_items": 0,
             "pops": 5,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xa3",
+            "description": "Makes a log entry; 3 topics.",
             "gas": 1500
         },
         {
-            "hex": "0xa4",
-            "mnemonic": "LOG",
-            "description": "Makes a log entry; 4 topics.",
+            "mnemonic": "LOG4",
             "additional_items": 0,
             "pops": 6,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xa4",
+            "description": "Makes a log entry; 4 topics.",
             "gas": 1875
         },
         {
@@ -2347,80 +1584,101 @@
             "description": "Push local variable to top of stack -- not part of Instructions.cpp"
         },
         {
-            "hex": "0xf0",
             "mnemonic": "CREATE",
-            "description": "Create a new account with associated code",
             "additional_items": 0,
             "pops": 3,
             "pushes": 1,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xf0",
+            "description": "Create a new account with associated code",
             "gas": 32000
         },
         {
-            "hex": "0xf1",
             "mnemonic": "CALL",
+            "additional_items": 0,
+            "pops": 7,
+            "pushes": 1,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xf1",
             "description": "Message-call into an account",
-            "additional_items": 0,
-            "pops": 7,
-            "pushes": 1,
             "gas": 40
         },
         {
-            "hex": "0xf2",
             "mnemonic": "CALLCODE",
-            "description": "Message-call with another account's code only",
             "additional_items": 0,
             "pops": 7,
             "pushes": 1,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xf2",
+            "description": "Message-call with another account's code only",
             "gas": 40
         },
         {
-            "hex": "0xf3",
             "mnemonic": "RETURN",
-            "description": "Halt execution returning output data",
             "additional_items": 0,
             "pops": 2,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Zero",
+            "hex": "0xf3",
+            "description": "Halt execution returning output data",
             "gas": 0
         },
         {
-            "hex": "0xf4",
             "mnemonic": "DELEGATECALL",
+            "additional_items": 0,
+            "pops": 6,
+            "pushes": 1,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xf4",
             "description": "Like CALLCODE but keeps caller's value and sender",
-            "additional_items": 0,
-            "pops": 6,
-            "pushes": 1,
             "gas": 40
         },
         {
-            "hex": "0xfa",
             "mnemonic": "STATICCALL",
-            "description": "Like CALL but disallow state modifications",
             "additional_items": 0,
             "pops": 6,
             "pushes": 1,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xfa",
+            "description": "Like CALL but disallow state modifications",
             "gas": 40
         },
         {
-            "hex": "0xfb",
             "mnemonic": "CREATE2",
+            "additional_items": 0,
+            "pops": 4,
+            "pushes": 1,
+            "side_effects": true,
+            "tier": "Special",
+            "hex": "0xfb",
             "description": "Create new account with associated code at address `sha3(sender + salt + sha3(init code)) % 2**160`"
         },
         {
-            "hex": "0xfd",
             "mnemonic": "REVERT",
-            "description": "Halt execution, revert state and return output data",
             "additional_items": 0,
             "pops": 2,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Zero",
+            "hex": "0xfd",
+            "description": "Halt execution, revert state and return output data",
             "gas": 0
         },
         {
-            "hex": "0xfe",
             "mnemonic": "INVALID",
-            "description": "Invalid instruction for expressing runtime errors (e.g., division-by-zero)",
             "additional_items": 0,
             "pops": 0,
             "pushes": 0,
+            "side_effects": true,
+            "tier": "Zero",
+            "hex": "0xfe",
+            "description": "Invalid instruction for expressing runtime errors (e.g., division-by-zero)",
             "gas": 0
         },
         {

@@ -14,14 +14,12 @@ let curIntHex = 0;
 comRows.forEach((row) => {
     let list1 = row.split("///<").map(str => str.trim());
     let list2 = list1[0].replace(/.$/, "").split("=").map(str => str.trim());
-    if(!list2.length || !list2[0].length) {
-        return;
-    }
+
     if(list2[1]) {
         curIntHex = utils.hexToInt(list2[1]);
-    } else {
-        list2[1] = "0x" + utils.intToHex(curIntHex);
     }
+
+    list2[1] = utils.intToHex(curIntHex);
 
     let jsonData = {
         hex: list2[1],
