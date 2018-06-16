@@ -1,0 +1,8 @@
+{
+    "name": "research-scripts",
+    "version": "0.0.1",
+    "dependencies": {
+        "merge": "^1.2.0",
+        "json-stringify-pretty-compact": "^1.2.0"
+    }
+}

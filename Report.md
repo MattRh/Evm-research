@@ -1,16 +1,19 @@
 # Development
 
 ---
-Наверное первый вопрос, который может возниктуть в начале изучения Solidity - существующие среды для
+Наверное, первый вопрос, который может возниктуть в начале изучения Solidity - существующие среды для
 разработки и компиляции (с их исполнением все несколько сложнее) смарт-контрактов.
 Далее идет список в порядке возрастания веротности использования простым разработчиком.
 
-## Plain text + command line
+## Utili
 
-Контракт на Solidity можно написать в простом блокноте и дать файлу любое расширение,
-а потом скомпилировать его используя консольный [solc](https://solidity.readthedocs.io/en/latest/installing-solidity.html), но долго жить так сложно..
+## Editors
+### Plain text + command line
 
-## Sublime Text, Atom..
+Контракт на Solidity можно написать в простом блокноте и дать файлу любое расширение(потому что комьюнити еще не определилось со стандартом),
+а потом скомпилировать его используя консольный [solc](https://solidity.readthedocs.io/en/latest/installing-solidity.html), но долго жить с этим довольно сложно..
+
+### Sublime Text, Atom..
 > https://packagecontrol.io/search/Solidity
 
 > https://atom.io/packages/search?q=solidity
@@ -19,11 +22,11 @@
 подсвечивать синтаксис Solidity, проводить статический анализ кода, но для этого всего нужно 
 разобраться с установкой и, возможно, написанием скриптов для сборки, и тонко все настраивать все под себя, а времени на это жалко.
 
-## Remix Web IDE
+### Remix Web IDE
 > https://remix.ethereum.org
 
 Официальная среда разработки от создателей языка. Может быть запущена локально (оффлайн) при необходимости.
-Имеет вроде как все необходимые функции, только дизассемблированный код довольно сложно читать.
+Имеет вроде как все необходимые функции, только дизассемблированный код довольно сложно читать (потому что Remix выводит его в одну строку).
 При большом желании можно получить относительно читаемый список опкодов, выполнив следующее действие в JS консоли:
 ```js
 let opcodes = "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE";
@@ -36,34 +39,79 @@ console.log(opcodes.replace(/\s([A-Z])/g, '\n$1'));
 ```
 Но использовать этот метод систематически довольно затруднительно.
 
-## IntelliJ Idea, VSCode
+### IntelliJ Idea, VSCode
 > https://plugins.jetbrains.com/plugin/9475-intellij-solidity
 
 > https://marketplace.visualstudio.com/search?term=solidity&target=VSCode&category=All%20categories&sortBy=Relevance
 
-Эти две IDE вроде бы единственные, где коммьюнити добавило поддержку Solidity и Ethereum в целом.
-По количеству скачиваний плагина решение на платформе Microsoft выглядит более популярным (223K vs 42K),
-но я бОльший поклонник платформы IntelliJ, так что я выбрал ее(а точнее WebStorm)
-и дальше опишу опыт ее использования в конкретном случае.
+Эти две IDE вроде бы единственные, где коммьюнити добавило поддержку Solidity и Ethereum в большей мере.
+По количеству скачиваний плагина решение на платформе Microsoft выглядит более популярным (223K vs 42K скачиваний),
+и этому даже есть объяснение - VSCode работает на JavaScript и комьюнити создало бесчисленное множество библиотек для Solidity именно на JavaScript.
 
-**Плюсы**
+Но я бОльший поклонник платформы IntelliJ, так что я выбрал ее (а точнее WebStorm - среда разработка для NodeJS)
+и дальше опишу опыт ее использования в этом конкретном случае.
+
+**Плюсы:**
 
 // todo: 
 
-**Минусы**
+**Минусы:**
 
-// todo
+Плагины для самого Solidity откровенно сырые.
+Если подсветка синтаксиса работает еще относительно стабильно 
+(хотя при этом не является очень продвинутым, а некоторые продвинутые функции отказываются работаеть), 
+Solidity Solhint - порт solhing для IDEA - работает из рук вон плохо.
+
+## More??
+Вообще, выше описаны только, на мой взгляд, основные средства для разработки, если хочется больше, то можно посмотреть здесь:
+* [Utility](https://github.com/bkrem/awesome-solidity#utility)
+* [Editor Plugins](https://github.com/bkrem/awesome-solidity#editor-plugins)
 
 # Tools
 
 ---
 
 ## Public tools
-// todo: здесь те библиотеки или готовые инструменты, которыми можно пользоваться
+
+Здесь те библиотеки или готовые инструменты, которыми можно пользоваться (или нельзя, но они полезны)
+
+### [ethereum-dasm](https://github.com/tintinweb/ethereum-dasm)
+Не очень сложный скрипт на питоне, который позволяет дизассемблировать скомпилированный байткод.
+К сожалению, написан на Python2 и 2 года не обновлялся(с 2016 года), соответственно поддерживает далеко не все опкоды.
+
+### [manticore](https://github.com/trailofbits/manticore)
+Популярный инструмент для посимвольного анализа байткода и поиска инпута, который может уронить контракт.
+Автивно поддерживается сообществом и вроде как пользуется популярностью. Написан тоже на Python2 и требует установленного solc/
+Являлся одним из источников данных об опкодах, но содержит не полный набор.
+
+### [porosity](https://github.com/comaeio/porosity)
+Инструмент для анализа контракта с точки зрения безопасности. Standalone, написан на C++.
+Есть документ от его создателей, который может выступать чем-то вроде введения (References -> EVM -> Docs/Tools).
+
+### [solgraph](https://github.com/raineorshine/solgraph)
+Визуализатор графа классов(т.е. контрактов) для Solidity.
+Генерирует [DOT](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) граф, 
+который показывает function control flow. Так же выделяет проблемы безопасности
+Написан на JavaScript. Используется в некоторых плагинах для IDE.
 
 ## Tools for research
-Готового для исследований не нашел, так что придется свои писать..
-// todo
+К сожалению продвинутых и удобных (еще и не устаревших) инструментов для анализа и компиляции Solidity
+найти не удалось, так что было принято решение написать такой инструмент самому.
+
+### My tool abilities
+
+#### Compile
+> `gulp sol_compile`
+> `gulp sol_compile_opti`
+
+Компилирует все файлы из папки `src` с расширением `*.sol` в папку `out` с расширением `*.evm` или `*.opti.evm` в зависмости от команды.
+Скомплированный файл содержит опкод контракта в текстовом виде, его можно дизассемблировать или скормить EVM.
+
+#### Disassemble
+> `gulp disassemble`
+
+Дизассемблирует и сохраняет в виде таблицы, удобной для чтения и анализа человеком
+все файлы из папки `out` с расширением `*.evm` в папку `dasm` и расширением `*.dasm`
 
 # Ethereum Virtual Machine
 
@@ -134,14 +182,29 @@ console.log(opcodes.replace(/\s([A-Z])/g, '\n$1'));
 ## Deployment & Execution
 // todo: как добавить контракт в блокчейн, запустить его. Может быть привести интересные контракты уже в блокчеине (например есть один, который собрал уже 1ккк баксов)
 
-# Solidity -> EVM
-// todo: основные понятия и данные и ссылка на док с полным списком (mappings.md)
+### Audit
+https://tool.smartdec.net/
+https://github.com/ConsenSys/mythril
+https://securify.ch/
 
+## Still have questions?
+Если есть какие-то вопросы, которые не были раскрыты в этом документе,
+то на них может ответить официальное [FAQ](https://solidity.readthedocs.io/en/latest/frequently-asked-questions.html).
+
+# Solidity --> EVM
+
+---
+
+// todo: основные понятия и данные и ссылка на док с полным списком (mappings.md)
 
 # Security
 
 ---
+
 ## Problems in Solidity
+Многое из описанного ниже можно найти здесь:
+* [Solidity -> Security Considerations](https://solidity.readthedocs.io/en/latest/security-considerations.html)
+* [Ethereum Smart Contract Security Best Practices](https://consensys.github.io/smart-contract-best-practices/)
 
 ### By design
 // todo
@@ -175,18 +238,22 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 ## Solidity
 * (official doc) Partly russian syntax description: [https://github.com/ethereum/wiki/wiki/.....](https://github.com/ethereum/wiki/wiki/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-Solidity)
 * (official docs) Docs: https://solidity.readthedocs.io/en/latest/
-* (3rd party repo) Simple contracts: https://github.com/djrtwo/simple-contracts
 * (article) Solidity security best practices: https://consensys.github.io/smart-contract-best-practices/recommendations/
+### Examples
+* https://github.com/djrtwo/simple-contracts
+* https://github.com/raineorshine/solidity-by-example
+* https://github.com/chriseth/solidity-examples
 
 ## EVM
 ### Readings/Videos
 * (blog) Diving into EVM: https://medium.com/@hayeah
 * (blog) Ethereum founder/EVM developer: https://medium.com/@jeff.ethereum
 * (video) EVM, Bytecode & Bugged Smart-Contracts: https://www.youtube.com/watch?v=odOuUhASCII
+* (RU video) Rich report on solidity and it's issues: https://www.youtube.com/watch?v=FbZTJE7b5e8
 
 ### Docs/Tools
 * (doc) Smart-contracts & EVM analysis: http://www.comae.io/reports/dc25-msuiche-Porosity-Decompiling-Ethereum-Smart-Contracts-wp.pdf
-* (official repo) Go Ethereum: https://github.com/ethereum/go-ethereum
+* (official repo) Go Ethereum, contains lots of docs: https://github.com/ethereum/go-ethereum
 * (3rd party repo) Disassembly (unfortunately, seems outdated and written on Python2): https://github.com/tintinweb/ethereum-dasm
 * (3rf party soft) Porosity (disassemble, vulnerability analyser): https://github.com/comaeio/porosity
 
@@ -195,6 +262,8 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 * (stackoverflow) Separated list: https://ethereum.stackexchange.com/questions/119/what-opcodes-are-available-for-the-ethereum-evm
 * (collection) List with costs (compilation of many docs): https://github.com/trailofbits/evm-opcodes
 
+---
+
 ## Pending list: то, что я еще не прочел, но может оказаться полезным
 * Implementing the Ethereum Virtual Machine (Part I): https://nervous.io/clojure/crypto/2017/09/12/clojure-evm/
 * Под капотом Ethereum Virtual Machine. Часть 1 — Solidity basics: https://habr.com/post/340928/
@@ -202,3 +271,13 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 
 * (official doc) Assembly: https://solidity.readthedocs.io/en/develop/assembly.html
 * (blog) Security blog posts: http://swende.se/
+
+
+* https://github.com/ethereum/solidity
+* https://github.com/ethereum/solidity/blob/develop/docs/bugs.rst
+* https://github.com/ethereum/solidity/blob/develop/docs/assembly.rst
+* https://github.com/ethereum/solidity/tree/develop/docs
+
+* https://github.com/ethereum/solidity/blob/0edce4b570c157927933697b30f0f94cbdf173b2/libevmasm/SemanticInformation.cpp
+* https://github.com/ethereum/solidity/blob/0edce4b570c157927933697b30f0f94cbdf173b2/libevmasm/Instruction.cpp
+* https://github.com/ethereum/solidity/blob/0edce4b570c157927933697b30f0f94cbdf173b2/libevmasm/Instruction.h
