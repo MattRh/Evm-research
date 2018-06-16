@@ -13,5 +13,6 @@ var opcode = {
     "tentative": false,
     "internal": false,
     "description": "",
+    "assembly_description": "",
     "link": "https://github.com/ethereum/EIPs/blob/master/EIPS/eip-615.md"
 };

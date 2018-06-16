@@ -44,7 +44,51 @@ Python implementation sets [GAS_LIMIT_MINIMUM = 5000](https://github.com/ethereu
 
 ## Tables
 
-// todo: скомпилировать таблицы и вставить сюда
+### Groups
+
+|Prefix|Description|
+|----|----|
+|0x00|Stop and Arithmetic Operations|
+|0x10|Comparison & Bitwise Logic Operations|
+|0x20|SHA3|
+|0x30|Environmental Information|
+|0x40|Block Information|
+|0x50|Stack, Memory, Storage and Flow Operations|
+|0x60|Push Operations|
+|0x70|Push Operations|
+|0x80|Duplication Operations|
+|0x90|Exchange Operations|
+|0xa0|Logging Operations|
+|0xf0|System operations|
+
+### Tiers
+
+|Tier|Cost|Comment|
+|----|----|----|
+|Zero|0|Zero|
+|Base|2|Quick|
+|VeryLow|3|Fastest|
+|Low|5|Fast|
+|Mid|8|Mid|
+|High|10|Slow|
+|Ext|20|Ext|
+|ExtCode|700|Extcode|
+|Balance|400|Balance|
+|Special| |multiparam or otherwise special|
+|Invalid|0|Invalid|
+
+### Opcodes
+
+|Mnemonic|Additional_items|Pops|Pushes|Side_effects|Tier|Hex|Gas|Description|
+|----|----|----|----|----|----|----|----|----|
+|STOP|0|0|0|true|Zero|0x00|0|Halts execution|
+|ADD|0|2|1|false|VeryLow|0x01|3|Addition operation.|
+|ADD| | | | | |0x1| |Addition operation|
+|MUL|0|2|1|false|Low|0x02|5|Multiplication operation.|
+|MUL| | | | | |0x2| |Multiplication operation|
+|SUB| | | | | |0x3| |Subtraction operation|
+|SUB|0|2|1|false|VeryLow|0x03|3|Subtraction operation.|
+|DIV|0|2|1|false|Low|0x04|5|Integer division operation.|
 
 ## Table Notes
 
