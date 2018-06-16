@@ -21,7 +21,7 @@ function compileTable(arr, columns = [], extend_columns = false) {
 
         columns.forEach((col) => {
             if(!obj.hasOwnProperty(col)) {
-                newObj[ucFirst(col)] = " ";
+                newObj[formatHead(col)] = " ";
             }
         });
 
@@ -32,14 +32,14 @@ function compileTable(arr, columns = [], extend_columns = false) {
                     val = " ";
                 }
 
-                newObj[ucFirst(key)] = val;
+                newObj[formatHead(key)] = val;
             }
         }
 
         return newObj;
     });
 
-    columns = columns.map((el) => ucFirst(el));
+    columns = columns.map((el) => formatHead(el));
 
     return toMarkdown(arr, columns);
 }

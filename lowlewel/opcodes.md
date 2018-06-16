@@ -85,158 +85,158 @@ Legend for opcodes table in below the table. It is woth mention that the table i
 
 ### Opcodes 
 
-|Mnemonic|Additional_items|Pops|Pushes|Side_effects|Tier|Hex|Description|Gas|
+|Hex|Mnemonic|Pops|Pushes|Tier|Description|Gas|Additional items|Side effects|
 |----|----|----|----|----|----|----|----|----|
-|STOP|0|0|0|true|Zero|0x00|Halts execution|0|
-|ADD|0|2|1|false|VeryLow|0x01|Addition operation|3|
-|MUL|0|2|1|false|Low|0x02|Multiplication operation|5|
-|SUB|0|2|1|false|VeryLow|0x03|Subtraction operation|3|
-|DIV|0|2|1|false|Low|0x04|Integer division operation|5|
-|SDIV|0|2|1|false|Low|0x05|Signed integer division operation|5|
-|MOD|0|2|1|false|Low|0x06|Modulo remainder operation|5|
-|SMOD|0|2|1|false|Low|0x07|Signed modulo remainder operation|5|
-|ADDMOD|0|3|1|false|Mid|0x08|Unsigned modular addition|8|
-|MULMOD|0|3|1|false|Mid|0x09|Unsigned modular multiplication|8|
-|EXP|0|2|1|false|Special|0x0a|Exponential operation|10|
-|SIGNEXTEND|0|2|1|false|Low|0x0b|Extend length of signed integer|5|
-|SELFDESTRUCT|0|1|0|true|Special|0xf|Halt execution and register account for later deletion| |
-|LT|0|2|1|false|VeryLow|0x10|Less-than comparison|3|
-|GT|0|2|1|false|VeryLow|0x11|Greater-than comparison|3|
-|SLT|0|2|1|false|VeryLow|0x12|Signed less-than comparison|3|
-|SGT|0|2|1|false|VeryLow|0x13|Signed greater-than comparison|3|
-|EQ|0|2|1|false|VeryLow|0x14|Equality comparison|3|
-|ISZERO|0|1|1|false|VeryLow|0x15|Simple not operator|3|
-|AND|0|2|1|false|VeryLow|0x16|Bitwise AND operation|3|
-|OR|0|2|1|false|VeryLow|0x17|Bitwise OR operation|3|
-|XOR|0|2|1|false|VeryLow|0x18|Bitwise XOR operation|3|
-|NOT|0|1|1|false|VeryLow|0x19|Bitwise NOT operation|3|
-|BYTE|0|2|1|false|VeryLow|0x1a|Retrieve single byte from word|3|
-|SHL|0|2|1|false|VeryLow|0x1b|Bitwise SHL operation| |
-|SHR|0|2|1|false|VeryLow|0x1c|Bitwise SHR operation| |
-|SAR|0|2|1|false|VeryLow|0x1d|Bitwise SAR operation| |
-|KECCAK256|0|2|1|true|Special|0x20|Compute KECCAK-256 hash|30|
-|ADDRESS|0|0|1|false|Base|0x30|Get address of currently executing account|2|
-|BALANCE|0|1|1|false|Balance|0x31|Get balance of the given account|20|
-|ORIGIN|0|0|1|false|Base|0x32|Get execution origination address|2|
-|CALLER|0|0|1|false|Base|0x33|Get caller address|2|
-|CALLVALUE|0|0|1|false|Base|0x34|Get deposited value by the instruction/transaction responsible for this execution|2|
-|CALLDATALOAD|0|1|1|false|VeryLow|0x35|Get input data of current environment|3|
-|CALLDATASIZE|0|0|1|false|Base|0x36|Get size of input data in current environment|2|
-|CALLDATACOPY|0|3|0|true|VeryLow|0x37|Copy input data in current environment to memory|3|
-|CODESIZE|0|0|1|false|Base|0x38|Get size of code running in current environment|2|
-|CODECOPY|0|3|0|true|VeryLow|0x39|Copy code running in current environment to memory|3|
-|GASPRICE|0|0|1|false|Base|0x3a|Get price of gas in current environment|2|
-|EXTCODESIZE|0|1|1|false|ExtCode|0x3b|Get external code size (from another contract)|20|
-|EXTCODECOPY|0|4|0|true|ExtCode|0x3c|Copy external code (from another contract)|20|
-|RETURNDATASIZE|0|0|1|false|Base|0x3d|Get size of return data buffer|2|
-|RETURNDATACOPY|0|3|0|true|VeryLow|0x3e|Copy return data in current environment to memory|3|
-|BLOCKHASH|0|1|1|false|Ext|0x40|Get hash of most recent complete block|20|
-|COINBASE|0|0|1|false|Base|0x41|Get the block's coinbase address|2|
-|TIMESTAMP|0|0|1|false|Base|0x42|Get the block's timestamp|2|
-|NUMBER|0|0|1|false|Base|0x43|Get the block's number|2|
-|DIFFICULTY|0|0|1|false|Base|0x44|Get the block's difficulty|2|
-|GASLIMIT|0|0|1|false|Base|0x45|Get the block's gas limit|2|
-|POP|0|1|0|false|Base|0x50|Remove item from stack|2|
-|MLOAD|0|1|1|true|VeryLow|0x51|Load word from memory|3|
-|MSTORE|0|2|0|true|VeryLow|0x52|Save word to memory|3|
-|MSTORE8|0|2|0|true|VeryLow|0x53|Save byte to memory|3|
-|SLOAD|0|1|1|false|Special|0x54|Load word from storage|50|
-|SSTORE|0|2|0|true|Special|0x55|Save word to storage|0|
-|JUMP|0|1|0|true|Mid|0x56|Alter the program counter|8|
-|JUMPI|0|2|0|true|High|0x57|Conditionally alter the program counter|10|
-|PC|0|0|1|false|Base|0x58|Get the program counter|2|
-|MSIZE|0|0|1|false|Base|0x59|Get the size of active memory|2|
-|GAS|0|0|1|false|Base|0x5a|Get the amount of available gas|2|
-|JUMPDEST|0|0|0|true|Special|0x5b|Set a potential jump destination|1|
-|PUSH1|1|0|1|false|VeryLow|0x60|Place 1 byte item on stack|0|
-|PUSH2|2|0|1|false|VeryLow|0x61|Place 2 byte item on stack|0|
-|PUSH3|3|0|1|false|VeryLow|0x62|Place 3 byte item on stack|0|
-|PUSH4|4|0|1|false|VeryLow|0x63|Place 4 byte item on stack|0|
-|PUSH5|5|0|1|false|VeryLow|0x64|Place 5 byte item on stack|0|
-|PUSH6|6|0|1|false|VeryLow|0x65|Place 6 byte item on stack|0|
-|PUSH7|7|0|1|false|VeryLow|0x66|Place 7 byte item on stack|0|
-|PUSH8|8|0|1|false|VeryLow|0x67|Place 8 byte item on stack|0|
-|PUSH9|9|0|1|false|VeryLow|0x68|Place 9 byte item on stack|0|
-|PUSH10|10|0|1|false|VeryLow|0x69|Place 10 byte item on stack|0|
-|PUSH11|11|0|1|false|VeryLow|0x6a|Place 11 byte item on stack|0|
-|PUSH12|12|0|1|false|VeryLow|0x6b|Place 12 byte item on stack|0|
-|PUSH13|13|0|1|false|VeryLow|0x6c|Place 13 byte item on stack|0|
-|PUSH14|14|0|1|false|VeryLow|0x6d|Place 14 byte item on stack|0|
-|PUSH15|15|0|1|false|VeryLow|0x6e|Place 15 byte item on stack|0|
-|PUSH16|16|0|1|false|VeryLow|0x6f|Place 16 byte item on stack|0|
-|PUSH17|17|0|1|false|VeryLow|0x70|Place 17 byte item on stack|0|
-|PUSH18|18|0|1|false|VeryLow|0x71|Place 18 byte item on stack|0|
-|PUSH19|19|0|1|false|VeryLow|0x72|Place 19 byte item on stack|0|
-|PUSH20|20|0|1|false|VeryLow|0x73|Place 20 byte item on stack|0|
-|PUSH21|21|0|1|false|VeryLow|0x74|Place 21 byte item on stack|0|
-|PUSH22|22|0|1|false|VeryLow|0x75|Place 22 byte item on stack|0|
-|PUSH23|23|0|1|false|VeryLow|0x76|Place 23 byte item on stack|0|
-|PUSH24|24|0|1|false|VeryLow|0x77|Place 24 byte item on stack|0|
-|PUSH25|25|0|1|false|VeryLow|0x78|Place 25 byte item on stack|0|
-|PUSH26|26|0|1|false|VeryLow|0x79|Place 26 byte item on stack|0|
-|PUSH27|27|0|1|false|VeryLow|0x7a|Place 27 byte item on stack|0|
-|PUSH28|28|0|1|false|VeryLow|0x7b|Place 28 byte item on stack|0|
-|PUSH29|29|0|1|false|VeryLow|0x7c|Place 29 byte item on stack|0|
-|PUSH30|30|0|1|false|VeryLow|0x7d|Place 30 byte item on stack|0|
-|PUSH31|31|0|1|false|VeryLow|0x7e|Place 31 byte item on stack|0|
-|PUSH32|32|0|1|false|VeryLow|0x7f|Place 32 byte item on stack|0|
-|DUP1|0|1|2|false|VeryLow|0x80|Copies the highest item in the stack to the top of the stack|3|
-|DUP2|0|2|3|false|VeryLow|0x81|Copies the second highest item in the stack to the top of the stack|3|
-|DUP3|0|3|4|false|VeryLow|0x82|Copies the third highest item in the stack to the top of the stack|3|
-|DUP4|0|4|5|false|VeryLow|0x83|Copies the 4th highest item in the stack to the top of the stack|3|
-|DUP5|0|5|6|false|VeryLow|0x84|Copies the 5th highest item in the stack to the top of the stack|3|
-|DUP6|0|6|7|false|VeryLow|0x85|Copies the 6th highest item in the stack to the top of the stack|3|
-|DUP7|0|7|8|false|VeryLow|0x86|Copies the 7th highest item in the stack to the top of the stack|3|
-|DUP8|0|8|9|false|VeryLow|0x87|Copies the 8th highest item in the stack to the top of the stack|3|
-|DUP9|0|9|10|false|VeryLow|0x88|Copies the 9th highest item in the stack to the top of the stack|3|
-|DUP10|0|10|11|false|VeryLow|0x89|Copies the 10th highest item in the stack to the top of the stack|3|
-|DUP11|0|11|12|false|VeryLow|0x8a|Copies the 11th highest item in the stack to the top of the stack|3|
-|DUP12|0|12|13|false|VeryLow|0x8b|Copies the 12th highest item in the stack to the top of the stack|3|
-|DUP13|0|13|14|false|VeryLow|0x8c|Copies the 13th highest item in the stack to the top of the stack|3|
-|DUP14|0|14|15|false|VeryLow|0x8d|Copies the 14th highest item in the stack to the top of the stack|3|
-|DUP15|0|15|16|false|VeryLow|0x8e|Copies the 15th highest item in the stack to the top of the stack|3|
-|DUP16|0|16|17|false|VeryLow|0x8f|Copies the 16th highest item in the stack to the top of the stack|3|
-|SWAP1|0|2|2|false|VeryLow|0x90|Swaps the highest and second highest value on the stack|3|
-|SWAP2|0|3|3|false|VeryLow|0x91|Swaps the highest and third highest value on the stack|3|
-|SWAP3|0|4|4|false|VeryLow|0x92|Swaps the highest and 4th highest value on the stack|3|
-|SWAP4|0|5|5|false|VeryLow|0x93|Swaps the highest and 5th highest value on the stack|3|
-|SWAP5|0|6|6|false|VeryLow|0x94|Swaps the highest and 6th highest value on the stack|3|
-|SWAP6|0|7|7|false|VeryLow|0x95|Swaps the highest and 7th highest value on the stack|3|
-|SWAP7|0|8|8|false|VeryLow|0x96|Swaps the highest and 8th highest value on the stack|3|
-|SWAP8|0|9|9|false|VeryLow|0x97|Swaps the highest and 9th highest value on the stack|3|
-|SWAP9|0|10|10|false|VeryLow|0x98|Swaps the highest and 10th highest value on the stack|3|
-|SWAP10|0|11|11|false|VeryLow|0x99|Swaps the highest and 11th highest value on the stack|3|
-|SWAP11|0|12|12|false|VeryLow|0x9a|Swaps the highest and 12th highest value on the stack|3|
-|SWAP12|0|13|13|false|VeryLow|0x9b|Swaps the highest and 13th highest value on the stack|3|
-|SWAP13|0|14|14|false|VeryLow|0x9c|Swaps the highest and 14th highest value on the stack|3|
-|SWAP14|0|15|15|false|VeryLow|0x9d|Swaps the highest and 15th highest value on the stack|3|
-|SWAP15|0|16|16|false|VeryLow|0x9e|Swaps the highest and 16th highest value on the stack|3|
-|SWAP16|0|17|17|false|VeryLow|0x9f|Swaps the highest and 17th highest value on the stack|3|
-|LOG0|0|2|0|true|Special|0xa0|Makes a log entry; no topics.|375|
-|LOG1|0|3|0|true|Special|0xa1|Makes a log entry; 1 topic.|750|
-|LOG2|0|4|0|true|Special|0xa2|Makes a log entry; 2 topics.|1125|
-|LOG3|0|5|0|true|Special|0xa3|Makes a log entry; 3 topics.|1500|
-|LOG4|0|6|0|true|Special|0xa4|Makes a log entry; 4 topics.|1875|
-|JUMPTO| | | | | |0xb0|Alter the program counter to a jumpdest -- not part of Instructions.cpp| |
-|JUMPIF| | | | | |0xb1|Conditionally alter the program counter -- not part of Instructions.cpp| |
-|JUMPV| | | | | |0xb2|Alter the program counter to a jumpdest -- not part of Instructions.cpp| |
-|JUMPSUB| | | | | |0xb3|Alter the program counter to a beginsub -- not part of Instructions.cpp| |
-|JUMPSUBV| | | | | |0xb4|Alter the program counter to a beginsub -- not part of Instructions.cpp| |
-|BEGINSUB| | | | | |0xb5|Set a potential jumpsub destination -- not part of Instructions.cpp| |
-|BEGINDATA| | | | | |0xb6|Begin the data section -- not part of Instructions.cpp| |
-|RETURNSUB| | | | | |0xb7|Return to subroutine jumped from -- not part of Instructions.cpp| |
-|PUTLOCAL| | | | | |0xb8|Pop top of stack to local variable -- not part of Instructions.cpp| |
-|GETLOCAL| | | | | |0xb9|Push local variable to top of stack -- not part of Instructions.cpp| |
-|CREATE|0|3|1|true|Special|0xf0|Create a new account with associated code|32000|
-|CALL|0|7|1|true|Special|0xf1|Message-call into an account|40|
-|CALLCODE|0|7|1|true|Special|0xf2|Message-call with another account's code only|40|
-|RETURN|0|2|0|true|Zero|0xf3|Halt execution returning output data|0|
-|DELEGATECALL|0|6|1|true|Special|0xf4|Like CALLCODE but keeps caller's value and sender|40|
-|STATICCALL|0|6|1|true|Special|0xfa|Like CALL but disallow state modifications|40|
-|CREATE2|0|4|1|true|Special|0xfb|Create new account with associated code at address `sha3(sender + salt + sha3(init code)) % 2**160`| |
-|REVERT|0|2|0|true|Zero|0xfd|Halt execution, revert state and return output data|0|
-|INVALID|0|0|0|true|Zero|0xfe|Invalid instruction for expressing runtime errors (e.g., division-by-zero)|0|
-|SELFDESTRUCT|0|1|0| | |0xff|Halt execution and register account for later deletion.|5000|
+|0x00|STOP|0|0|Zero|Halts execution|0|0|true|
+|0x01|ADD|2|1|VeryLow|Addition operation|3|0|false|
+|0x02|MUL|2|1|Low|Multiplication operation|5|0|false|
+|0x03|SUB|2|1|VeryLow|Subtraction operation|3|0|false|
+|0x04|DIV|2|1|Low|Integer division operation|5|0|false|
+|0x05|SDIV|2|1|Low|Signed integer division operation|5|0|false|
+|0x06|MOD|2|1|Low|Modulo remainder operation|5|0|false|
+|0x07|SMOD|2|1|Low|Signed modulo remainder operation|5|0|false|
+|0x08|ADDMOD|3|1|Mid|Unsigned modular addition|8|0|false|
+|0x09|MULMOD|3|1|Mid|Unsigned modular multiplication|8|0|false|
+|0x0a|EXP|2|1|Special|Exponential operation|10|0|false|
+|0x0b|SIGNEXTEND|2|1|Low|Extend length of signed integer|5|0|false|
+|0x0f|SELFDESTRUCT|1|0|Special|Halt execution and register account for later deletion| |0|true|
+|0x10|LT|2|1|VeryLow|Less-than comparison|3|0|false|
+|0x11|GT|2|1|VeryLow|Greater-than comparison|3|0|false|
+|0x12|SLT|2|1|VeryLow|Signed less-than comparison|3|0|false|
+|0x13|SGT|2|1|VeryLow|Signed greater-than comparison|3|0|false|
+|0x14|EQ|2|1|VeryLow|Equality comparison|3|0|false|
+|0x15|ISZERO|1|1|VeryLow|Simple not operator|3|0|false|
+|0x16|AND|2|1|VeryLow|Bitwise AND operation|3|0|false|
+|0x17|OR|2|1|VeryLow|Bitwise OR operation|3|0|false|
+|0x18|XOR|2|1|VeryLow|Bitwise XOR operation|3|0|false|
+|0x19|NOT|1|1|VeryLow|Bitwise NOT operation|3|0|false|
+|0x1a|BYTE|2|1|VeryLow|Retrieve single byte from word|3|0|false|
+|0x1b|SHL|2|1|VeryLow|Bitwise SHL operation| |0|false|
+|0x1c|SHR|2|1|VeryLow|Bitwise SHR operation| |0|false|
+|0x1d|SAR|2|1|VeryLow|Bitwise SAR operation| |0|false|
+|0x20|KECCAK256|2|1|Special|Compute KECCAK-256 hash|30|0|true|
+|0x30|ADDRESS|0|1|Base|Get address of currently executing account|2|0|false|
+|0x31|BALANCE|1|1|Balance|Get balance of the given account|20|0|false|
+|0x32|ORIGIN|0|1|Base|Get execution origination address|2|0|false|
+|0x33|CALLER|0|1|Base|Get caller address|2|0|false|
+|0x34|CALLVALUE|0|1|Base|Get deposited value by the instruction/transaction responsible for this execution|2|0|false|
+|0x35|CALLDATALOAD|1|1|VeryLow|Get input data of current environment|3|0|false|
+|0x36|CALLDATASIZE|0|1|Base|Get size of input data in current environment|2|0|false|
+|0x37|CALLDATACOPY|3|0|VeryLow|Copy input data in current environment to memory|3|0|true|
+|0x38|CODESIZE|0|1|Base|Get size of code running in current environment|2|0|false|
+|0x39|CODECOPY|3|0|VeryLow|Copy code running in current environment to memory|3|0|true|
+|0x3a|GASPRICE|0|1|Base|Get price of gas in current environment|2|0|false|
+|0x3b|EXTCODESIZE|1|1|ExtCode|Get external code size (from another contract)|20|0|false|
+|0x3c|EXTCODECOPY|4|0|ExtCode|Copy external code (from another contract)|20|0|true|
+|0x3d|RETURNDATASIZE|0|1|Base|Get size of return data buffer|2|0|false|
+|0x3e|RETURNDATACOPY|3|0|VeryLow|Copy return data in current environment to memory|3|0|true|
+|0x40|BLOCKHASH|1|1|Ext|Get hash of most recent complete block|20|0|false|
+|0x41|COINBASE|0|1|Base|Get the block's coinbase address|2|0|false|
+|0x42|TIMESTAMP|0|1|Base|Get the block's timestamp|2|0|false|
+|0x43|NUMBER|0|1|Base|Get the block's number|2|0|false|
+|0x44|DIFFICULTY|0|1|Base|Get the block's difficulty|2|0|false|
+|0x45|GASLIMIT|0|1|Base|Get the block's gas limit|2|0|false|
+|0x50|POP|1|0|Base|Remove item from stack|2|0|false|
+|0x51|MLOAD|1|1|VeryLow|Load word from memory|3|0|true|
+|0x52|MSTORE|2|0|VeryLow|Save word to memory|3|0|true|
+|0x53|MSTORE8|2|0|VeryLow|Save byte to memory|3|0|true|
+|0x54|SLOAD|1|1|Special|Load word from storage|50|0|false|
+|0x55|SSTORE|2|0|Special|Save word to storage|0|0|true|
+|0x56|JUMP|1|0|Mid|Alter the program counter|8|0|true|
+|0x57|JUMPI|2|0|High|Conditionally alter the program counter|10|0|true|
+|0x58|PC|0|1|Base|Get the program counter|2|0|false|
+|0x59|MSIZE|0|1|Base|Get the size of active memory|2|0|false|
+|0x5a|GAS|0|1|Base|Get the amount of available gas|2|0|false|
+|0x5b|JUMPDEST|0|0|Special|Set a potential jump destination|1|0|true|
+|0x60|PUSH1|0|1|VeryLow|Place 1 byte item on stack|0|1|false|
+|0x61|PUSH2|0|1|VeryLow|Place 2 byte item on stack|0|2|false|
+|0x62|PUSH3|0|1|VeryLow|Place 3 byte item on stack|0|3|false|
+|0x63|PUSH4|0|1|VeryLow|Place 4 byte item on stack|0|4|false|
+|0x64|PUSH5|0|1|VeryLow|Place 5 byte item on stack|0|5|false|
+|0x65|PUSH6|0|1|VeryLow|Place 6 byte item on stack|0|6|false|
+|0x66|PUSH7|0|1|VeryLow|Place 7 byte item on stack|0|7|false|
+|0x67|PUSH8|0|1|VeryLow|Place 8 byte item on stack|0|8|false|
+|0x68|PUSH9|0|1|VeryLow|Place 9 byte item on stack|0|9|false|
+|0x69|PUSH10|0|1|VeryLow|Place 10 byte item on stack|0|10|false|
+|0x6a|PUSH11|0|1|VeryLow|Place 11 byte item on stack|0|11|false|
+|0x6b|PUSH12|0|1|VeryLow|Place 12 byte item on stack|0|12|false|
+|0x6c|PUSH13|0|1|VeryLow|Place 13 byte item on stack|0|13|false|
+|0x6d|PUSH14|0|1|VeryLow|Place 14 byte item on stack|0|14|false|
+|0x6e|PUSH15|0|1|VeryLow|Place 15 byte item on stack|0|15|false|
+|0x6f|PUSH16|0|1|VeryLow|Place 16 byte item on stack|0|16|false|
+|0x70|PUSH17|0|1|VeryLow|Place 17 byte item on stack|0|17|false|
+|0x71|PUSH18|0|1|VeryLow|Place 18 byte item on stack|0|18|false|
+|0x72|PUSH19|0|1|VeryLow|Place 19 byte item on stack|0|19|false|
+|0x73|PUSH20|0|1|VeryLow|Place 20 byte item on stack|0|20|false|
+|0x74|PUSH21|0|1|VeryLow|Place 21 byte item on stack|0|21|false|
+|0x75|PUSH22|0|1|VeryLow|Place 22 byte item on stack|0|22|false|
+|0x76|PUSH23|0|1|VeryLow|Place 23 byte item on stack|0|23|false|
+|0x77|PUSH24|0|1|VeryLow|Place 24 byte item on stack|0|24|false|
+|0x78|PUSH25|0|1|VeryLow|Place 25 byte item on stack|0|25|false|
+|0x79|PUSH26|0|1|VeryLow|Place 26 byte item on stack|0|26|false|
+|0x7a|PUSH27|0|1|VeryLow|Place 27 byte item on stack|0|27|false|
+|0x7b|PUSH28|0|1|VeryLow|Place 28 byte item on stack|0|28|false|
+|0x7c|PUSH29|0|1|VeryLow|Place 29 byte item on stack|0|29|false|
+|0x7d|PUSH30|0|1|VeryLow|Place 30 byte item on stack|0|30|false|
+|0x7e|PUSH31|0|1|VeryLow|Place 31 byte item on stack|0|31|false|
+|0x7f|PUSH32|0|1|VeryLow|Place 32 byte item on stack|0|32|false|
+|0x80|DUP1|1|2|VeryLow|Copies the highest item in the stack to the top of the stack|3|0|false|
+|0x81|DUP2|2|3|VeryLow|Copies the second highest item in the stack to the top of the stack|3|0|false|
+|0x82|DUP3|3|4|VeryLow|Copies the third highest item in the stack to the top of the stack|3|0|false|
+|0x83|DUP4|4|5|VeryLow|Copies the 4th highest item in the stack to the top of the stack|3|0|false|
+|0x84|DUP5|5|6|VeryLow|Copies the 5th highest item in the stack to the top of the stack|3|0|false|
+|0x85|DUP6|6|7|VeryLow|Copies the 6th highest item in the stack to the top of the stack|3|0|false|
+|0x86|DUP7|7|8|VeryLow|Copies the 7th highest item in the stack to the top of the stack|3|0|false|
+|0x87|DUP8|8|9|VeryLow|Copies the 8th highest item in the stack to the top of the stack|3|0|false|
+|0x88|DUP9|9|10|VeryLow|Copies the 9th highest item in the stack to the top of the stack|3|0|false|
+|0x89|DUP10|10|11|VeryLow|Copies the 10th highest item in the stack to the top of the stack|3|0|false|
+|0x8a|DUP11|11|12|VeryLow|Copies the 11th highest item in the stack to the top of the stack|3|0|false|
+|0x8b|DUP12|12|13|VeryLow|Copies the 12th highest item in the stack to the top of the stack|3|0|false|
+|0x8c|DUP13|13|14|VeryLow|Copies the 13th highest item in the stack to the top of the stack|3|0|false|
+|0x8d|DUP14|14|15|VeryLow|Copies the 14th highest item in the stack to the top of the stack|3|0|false|
+|0x8e|DUP15|15|16|VeryLow|Copies the 15th highest item in the stack to the top of the stack|3|0|false|
+|0x8f|DUP16|16|17|VeryLow|Copies the 16th highest item in the stack to the top of the stack|3|0|false|
+|0x90|SWAP1|2|2|VeryLow|Swaps the highest and second highest value on the stack|3|0|false|
+|0x91|SWAP2|3|3|VeryLow|Swaps the highest and third highest value on the stack|3|0|false|
+|0x92|SWAP3|4|4|VeryLow|Swaps the highest and 4th highest value on the stack|3|0|false|
+|0x93|SWAP4|5|5|VeryLow|Swaps the highest and 5th highest value on the stack|3|0|false|
+|0x94|SWAP5|6|6|VeryLow|Swaps the highest and 6th highest value on the stack|3|0|false|
+|0x95|SWAP6|7|7|VeryLow|Swaps the highest and 7th highest value on the stack|3|0|false|
+|0x96|SWAP7|8|8|VeryLow|Swaps the highest and 8th highest value on the stack|3|0|false|
+|0x97|SWAP8|9|9|VeryLow|Swaps the highest and 9th highest value on the stack|3|0|false|
+|0x98|SWAP9|10|10|VeryLow|Swaps the highest and 10th highest value on the stack|3|0|false|
+|0x99|SWAP10|11|11|VeryLow|Swaps the highest and 11th highest value on the stack|3|0|false|
+|0x9a|SWAP11|12|12|VeryLow|Swaps the highest and 12th highest value on the stack|3|0|false|
+|0x9b|SWAP12|13|13|VeryLow|Swaps the highest and 13th highest value on the stack|3|0|false|
+|0x9c|SWAP13|14|14|VeryLow|Swaps the highest and 14th highest value on the stack|3|0|false|
+|0x9d|SWAP14|15|15|VeryLow|Swaps the highest and 15th highest value on the stack|3|0|false|
+|0x9e|SWAP15|16|16|VeryLow|Swaps the highest and 16th highest value on the stack|3|0|false|
+|0x9f|SWAP16|17|17|VeryLow|Swaps the highest and 17th highest value on the stack|3|0|false|
+|0xa0|LOG0|2|0|Special|Makes a log entry; no topics.|375|0|true|
+|0xa1|LOG1|3|0|Special|Makes a log entry; 1 topic.|750|0|true|
+|0xa2|LOG2|4|0|Special|Makes a log entry; 2 topics.|1125|0|true|
+|0xa3|LOG3|5|0|Special|Makes a log entry; 3 topics.|1500|0|true|
+|0xa4|LOG4|6|0|Special|Makes a log entry; 4 topics.|1875|0|true|
+|0xb0|JUMPTO| | | |Alter the program counter to a jumpdest -- not part of Instructions.cpp| | | |
+|0xb1|JUMPIF| | | |Conditionally alter the program counter -- not part of Instructions.cpp| | | |
+|0xb2|JUMPV| | | |Alter the program counter to a jumpdest -- not part of Instructions.cpp| | | |
+|0xb3|JUMPSUB| | | |Alter the program counter to a beginsub -- not part of Instructions.cpp| | | |
+|0xb4|JUMPSUBV| | | |Alter the program counter to a beginsub -- not part of Instructions.cpp| | | |
+|0xb5|BEGINSUB| | | |Set a potential jumpsub destination -- not part of Instructions.cpp| | | |
+|0xb6|BEGINDATA| | | |Begin the data section -- not part of Instructions.cpp| | | |
+|0xb7|RETURNSUB| | | |Return to subroutine jumped from -- not part of Instructions.cpp| | | |
+|0xb8|PUTLOCAL| | | |Pop top of stack to local variable -- not part of Instructions.cpp| | | |
+|0xb9|GETLOCAL| | | |Push local variable to top of stack -- not part of Instructions.cpp| | | |
+|0xf0|CREATE|3|1|Special|Create a new account with associated code|32000|0|true|
+|0xf1|CALL|7|1|Special|Message-call into an account|40|0|true|
+|0xf2|CALLCODE|7|1|Special|Message-call with another account's code only|40|0|true|
+|0xf3|RETURN|2|0|Zero|Halt execution returning output data|0|0|true|
+|0xf4|DELEGATECALL|6|1|Special|Like CALLCODE but keeps caller's value and sender|40|0|true|
+|0xfa|STATICCALL|6|1|Special|Like CALL but disallow state modifications|40|0|true|
+|0xfb|CREATE2|4|1|Special|Create new account with associated code at address `sha3(sender + salt + sha3(init code)) % 2**160`| |0|true|
+|0xfd|REVERT|2|0|Zero|Halt execution, revert state and return output data|0|0|true|
+|0xfe|INVALID|0|0|Zero|Invalid instruction for expressing runtime errors (e.g., division-by-zero)|0|0|true|
+|0xff|SELFDESTRUCT|1|0| |Halt execution and register account for later deletion.|5000|0| |
 
 ## Table Legend
 

@@ -19,6 +19,8 @@ const paramsRightOrder = [
 ];
 
 const fs = require("fs");
+const merge = require("merge");
+
 const stringify = require("json-stringify-pretty-compact");
 
 let dataTxt = fs.readFileSync("../opcodes.json").toString();
@@ -59,8 +61,23 @@ function saveCommon() {
         fs.renameSync("../opcodes.json", "../opcodes.old.json");
     }
 
+    // sort opcodes by hex
     commonData.opcodes = commonData.opcodes.sort((a, b) => {
         return hexToInt(a.hex) - hexToInt(b.hex);
+    });
+    // sort opcode properties
+    commonData.opcodes = commonData.opcodes.map((op) => {
+        let sortedOp = {};
+
+        paramsRightOrder.forEach((param) => {
+            if(op.hasOwnProperty(param)) {
+                sortedOp[param] = op[param];
+            }
+        });
+
+        merge(sortedOp, op);
+
+        return sortedOp;
     });
 
     fs.writeFileSync("../opcodes.json", stringify(commonData, {
