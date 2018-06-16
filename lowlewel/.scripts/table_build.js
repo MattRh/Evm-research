@@ -52,7 +52,9 @@ let opcodes = compileTable(source.opcodes);
 
 //console.log("### Groups \n\n", groups, "\n");
 //console.log("### Tiers \n\n", tiers, "\n");
-console.log("### Opcodes \n\n", opcodes, "\n");
+//console.log("### Opcodes \n\n", opcodes, "\n");
+
+fs.writeFileSync('../opcodes.table.md', "### Opcodes \n\n" + opcodes);
 
 function ucFirst(str) {
     if(typeof str === "string") {
