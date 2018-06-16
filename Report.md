@@ -5,7 +5,14 @@
 разработки и компиляции (с их исполнением все несколько сложнее) смарт-контрактов.
 Далее идет список в порядке возрастания веротности использования простым разработчиком.
 
-## Utili
+## Utilities
+
+Есть два основных инструмента созданных комьюнити для проверки и улучшения смарт-контрактов.
+Оба являются линтерами, которые проверяют style guide и ищут проблемы безопасности.
+Оба в той или иной степени используются в некоторых плагинах для редакторов, так что о них полездно знать.
+
+* [Solhint](https://github.com/protofire/solhint)
+* [Solium](https://github.com/duaraghav8/Solium)
 
 ## Editors
 ### Plain text + command line
@@ -146,7 +153,8 @@ Solidity Solhint - порт solhing для IDEA - работает из рук �
 // todo
 
 ## Opcodes
-// todo: ссылка на полный список и описание основных из них
+
+Всю(на сколько ее найти простому человеку) информацию по опкодам EVM можно увидеть в файле [opcodes.md](https://github.com/MattRh/Evm-research/blob/master/lowlewel/opcodes.md)
 
 # Solidity
 
@@ -186,6 +194,7 @@ Solidity Solhint - порт solhing для IDEA - работает из рук �
 https://tool.smartdec.net/
 https://github.com/ConsenSys/mythril
 https://securify.ch/
+// todo
 
 ## Still have questions?
 Если есть какие-то вопросы, которые не были раскрыты в этом документе,
@@ -195,7 +204,7 @@ https://securify.ch/
 
 ---
 
-// todo: основные понятия и данные и ссылка на док с полным списком (mappings.md)
+// todo: основные понятия и данные, и ссылка на док с полным списком ([mappings.md](https://github.com/MattRh/Evm-research/blob/master/lowlewel/mappings.md))
 
 # Security
 
@@ -230,6 +239,7 @@ _It is worth mention that this book is usefull only in beginning and leaves lots
 It is recommended to follow order of links while reading.
 In blogs it is better to start from oldest posts about blockchain/smart-contracts
 (thankfully, Ethereum is not so old, so you probably won't gain legacy knowledge)
+P.S. Links that REALLY worth to visit are marked by **bold text**
 
 ## Ethereum
 * (official wiki) Introduction: https://github.com/ethereum/wiki/wiki/Ethereum-introduction
@@ -238,18 +248,19 @@ In blogs it is better to start from oldest posts about blockchain/smart-contract
 ## Solidity
 * (official doc) Partly russian syntax description: [https://github.com/ethereum/wiki/wiki/.....](https://github.com/ethereum/wiki/wiki/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-Solidity)
 * (official docs) Docs: https://solidity.readthedocs.io/en/latest/
-* (article) Solidity security best practices: https://consensys.github.io/smart-contract-best-practices/recommendations/
-### Examples
+* (article) **Solidity security best practices**: https://consensys.github.io/smart-contract-best-practices/
+* (docs) **Official Solidity FAQ**: https://solidity.readthedocs.io/en/latest/frequently-asked-questions.html
+### Code Examples
 * https://github.com/djrtwo/simple-contracts
 * https://github.com/raineorshine/solidity-by-example
 * https://github.com/chriseth/solidity-examples
 
 ## EVM
 ### Readings/Videos
-* (blog) Diving into EVM: https://medium.com/@hayeah
-* (blog) Ethereum founder/EVM developer: https://medium.com/@jeff.ethereum
-* (video) EVM, Bytecode & Bugged Smart-Contracts: https://www.youtube.com/watch?v=odOuUhASCII
-* (RU video) Rich report on solidity and it's issues: https://www.youtube.com/watch?v=FbZTJE7b5e8
+* (blog) **Diving into EVM**: https://medium.com/@hayeah
+* (blog) **EVM on GO developer**: https://medium.com/@jeff.ethereum
+* (video) **EVM, Bytecode & Bugged Smart-Contracts**: https://www.youtube.com/watch?v=odOuUhASCII
+* (RU video) **Rich report on solidity and it's issues**: https://www.youtube.com/watch?v=FbZTJE7b5e8
 
 ### Docs/Tools
 * (doc) Smart-contracts & EVM analysis: http://www.comae.io/reports/dc25-msuiche-Porosity-Decompiling-Ethereum-Smart-Contracts-wp.pdf
