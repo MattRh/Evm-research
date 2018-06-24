@@ -15,6 +15,7 @@ const paramsRightOrder = [
     "tentative",
     "internal",
     "assembly_description",
+    "assembly_since",
     "link"
 ];
 

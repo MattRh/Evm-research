@@ -146,7 +146,8 @@
             "description": "Exponential operation",
             "gas": 10,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "gas_formula": "(exp == 0) ? 10 : (10 + 10 * (1 + log256(exp)))"
         },
         {
             "hex": "0x0b",
@@ -319,7 +320,8 @@
             "description": "Compute KECCAK-256 hash",
             "gas": 30,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "30 + 6 * (size of input in words)"
         },
         {
             "hex": "0x30",
@@ -407,7 +409,8 @@
             "description": "Copy input data in current environment to memory",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "2 + 3 * (number of words copied, rounded up)"
         },
         {
             "hex": "0x38",
@@ -429,7 +432,8 @@
             "description": "Copy code running in current environment to memory",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "2 + 3 * (number of words copied, rounded up)"
         },
         {
             "hex": "0x3a",
@@ -462,7 +466,8 @@
             "description": "Copy external code (from another contract)",
             "gas": 20,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "700 + 3 * (number of words copied, rounded up)"
         },
         {
             "hex": "0x3d",
@@ -473,7 +478,8 @@
             "description": "Get size of return data buffer",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "link": "[EIP 211](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-211.md)"
         },
         {
             "hex": "0x3e",
@@ -484,7 +490,8 @@
             "description": "Copy return data in current environment to memory",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "link": "[EIP 211](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-211.md)"
         },
         {
             "hex": "0x40",
@@ -616,7 +623,8 @@
             "description": "Save word to storage",
             "gas": 0,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "((value != 0) && (storage_location == 0)) ? 20000 : 5000"
         },
         {
             "hex": "0x56",
@@ -1397,7 +1405,8 @@
             "description": "Makes a log entry; no topics.",
             "gas": 375,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "375 + 8 * (number of bytes in log data)"
         },
         {
             "hex": "0xa1",
@@ -1408,7 +1417,8 @@
             "description": "Makes a log entry; 1 topic.",
             "gas": 750,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "375 + 8 * (number of bytes in log data) + 375"
         },
         {
             "hex": "0xa2",
@@ -1419,7 +1429,8 @@
             "description": "Makes a log entry; 2 topics.",
             "gas": 1125,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "375 + 8 * (number of bytes in log data) + 2 * 375"
         },
         {
             "hex": "0xa3",
@@ -1430,7 +1441,8 @@
             "description": "Makes a log entry; 3 topics.",
             "gas": 1500,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "375 + 8 * (number of bytes in log data) + 3 * 375"
         },
         {
             "hex": "0xa4",
@@ -1441,7 +1453,8 @@
             "description": "Makes a log entry; 4 topics.",
             "gas": 1875,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "375 + 8 * (number of bytes in log data) + 4 * 375"
         },
         {
             "hex": "0xac",
@@ -1480,7 +1493,8 @@
             "pushes": 0,
             "tier": "VeryLow",
             "description": "Alter the program counter to a jumpdest",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb1",
@@ -1489,7 +1503,8 @@
             "pushes": 0,
             "tier": "Low",
             "description": "Conditionally alter the program counter",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb2",
@@ -1498,7 +1513,8 @@
             "pushes": 0,
             "tier": "Low",
             "description": "Alter the program counter to a beginsub",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb3",
@@ -1516,7 +1532,8 @@
             "pushes": 0,
             "tier": "Mid",
             "description": "Alter the program counter to a beginsub",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb5",
@@ -1525,7 +1542,8 @@
             "pushes": 0,
             "tier": "Special",
             "description": "Set a potential jumpsub destination",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb6",
@@ -1534,7 +1552,8 @@
             "pushes": 0,
             "tier": "Special",
             "description": "Begine the data section",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb7",
@@ -1552,7 +1571,8 @@
             "pushes": 0,
             "tier": "VeryLow",
             "description": "Pop top of stack to local variable",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xb9",
@@ -1561,7 +1581,8 @@
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Push local variable to top of stack",
-            "tentative": true
+            "tentative": true,
+            "link": "[EIP 615](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-615.md)"
         },
         {
             "hex": "0xc1",
@@ -1880,7 +1901,8 @@
             "description": "Message-call into an account",
             "gas": 40,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "Complex -- see yellow paper  Appendix H"
         },
         {
             "hex": "0xf2",
@@ -1891,7 +1913,8 @@
             "description": "Message-call with another account's code only",
             "gas": 40,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "Complex -- see yellow paper  Appendix H"
         },
         {
             "hex": "0xf3",
@@ -1913,7 +1936,8 @@
             "description": "Like CALLCODE but keeps caller's value and sender",
             "gas": 40,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "Complex -- see yellow paper  Appendix H"
         },
         {
             "hex": "0xfa",
@@ -1956,7 +1980,8 @@
             "description": "Invalid instruction for expressing runtime errors (e.g., division-by-zero)",
             "gas": 0,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "N/A"
         },
         {
             "hex": "0xff",
@@ -1967,7 +1992,8 @@
             "description": "Halt execution and register account for later deletion",
             "gas": 5000,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "gas_formula": "5000 + ((create_new_account) ? 25000 : 0)"
         }
     ]
 }

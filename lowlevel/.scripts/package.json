@@ -4,6 +4,7 @@
     "dependencies": {
         "merge": "^1.2.0",
         "json-stringify-pretty-compact": "^1.2.0",
-        "json-to-markdown-table": "^1.0.0"
+        "json-to-markdown-table": "^1.0.0",
+        "csv-parse": "^2.5.0"
     }
 }
