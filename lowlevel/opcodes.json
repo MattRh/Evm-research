@@ -160,16 +160,6 @@
             "side_effects": false
         },
         {
-            "hex": "0x0f",
-            "mnemonic": "SELFDESTRUCT",
-            "pops": 1,
-            "pushes": 0,
-            "tier": "Special",
-            "description": "Halt execution and register account for later deletion",
-            "additional_items": 0,
-            "side_effects": true
-        },
-        {
             "hex": "0x10",
             "mnemonic": "LT",
             "pops": 2,
@@ -322,7 +312,7 @@
         },
         {
             "hex": "0x20",
-            "mnemonic": "KECCAK256",
+            "mnemonic": ["KECCAK256", "SHA3"],
             "pops": 2,
             "pushes": 1,
             "tier": "Special",
@@ -1454,54 +1444,421 @@
             "side_effects": true
         },
         {
+            "hex": "0xac",
+            "mnemonic": "PUSHC",
+            "pops": 0,
+            "pushes": 1,
+            "tier": "VeryLow",
+            "description": "Push value from constant pool",
+            "tentative": true,
+            "internal": true
+        },
+        {
+            "hex": "0xad",
+            "mnemonic": "JUMPC",
+            "pops": 1,
+            "pushes": 0,
+            "tier": "Mid",
+            "description": "Alter the program counter - pre-verified",
+            "tentative": true,
+            "internal": true
+        },
+        {
+            "hex": "0xae",
+            "mnemonic": "JUMPCI",
+            "pops": 2,
+            "pushes": 0,
+            "tier": "High",
+            "description": "Conditionally alter the program counter - pre-verified",
+            "tentative": true,
+            "internal": true
+        },
+        {
             "hex": "0xb0",
             "mnemonic": "JUMPTO",
-            "description": "Alter the program counter to a jumpdest -- not part of Instructions.cpp"
+            "pops": 1,
+            "pushes": 0,
+            "tier": "VeryLow",
+            "description": "Alter the program counter to a jumpdest",
+            "tentative": true
         },
         {
             "hex": "0xb1",
             "mnemonic": "JUMPIF",
-            "description": "Conditionally alter the program counter -- not part of Instructions.cpp"
+            "pops": 2,
+            "pushes": 0,
+            "tier": "Low",
+            "description": "Conditionally alter the program counter",
+            "tentative": true
         },
         {
             "hex": "0xb2",
-            "mnemonic": "JUMPV",
-            "description": "Alter the program counter to a jumpdest -- not part of Instructions.cpp"
+            "mnemonic": "JUMPSUB",
+            "pops": 1,
+            "pushes": 0,
+            "tier": "Low",
+            "description": "Alter the program counter to a beginsub",
+            "tentative": true
         },
         {
             "hex": "0xb3",
-            "mnemonic": "JUMPSUB",
-            "description": "Alter the program counter to a beginsub -- not part of Instructions.cpp"
+            "mnemonic": "JUMPV",
+            "pops": 1,
+            "pushes": 0,
+            "tier": "Mid",
+            "description": "Alter the program counter to a jumpdest",
+            "tentative": true
         },
         {
             "hex": "0xb4",
             "mnemonic": "JUMPSUBV",
-            "description": "Alter the program counter to a beginsub -- not part of Instructions.cpp"
+            "pops": 1,
+            "pushes": 0,
+            "tier": "Mid",
+            "description": "Alter the program counter to a beginsub",
+            "tentative": true
         },
         {
             "hex": "0xb5",
             "mnemonic": "BEGINSUB",
-            "description": "Set a potential jumpsub destination -- not part of Instructions.cpp"
+            "pops": 0,
+            "pushes": 0,
+            "tier": "Special",
+            "description": "Set a potential jumpsub destination",
+            "tentative": true
         },
         {
             "hex": "0xb6",
             "mnemonic": "BEGINDATA",
-            "description": "Begin the data section -- not part of Instructions.cpp"
+            "pops": 0,
+            "pushes": 0,
+            "tier": "Special",
+            "description": "Begine the data section",
+            "tentative": true
         },
         {
             "hex": "0xb7",
             "mnemonic": "RETURNSUB",
-            "description": "Return to subroutine jumped from -- not part of Instructions.cpp"
+            "pops": 1,
+            "pushes": 0,
+            "tier": "Mid",
+            "description": "Return to subroutine jumped from",
+            "tentative": true
         },
         {
             "hex": "0xb8",
             "mnemonic": "PUTLOCAL",
-            "description": "Pop top of stack to local variable -- not part of Instructions.cpp"
+            "pops": 1,
+            "pushes": 0,
+            "tier": "VeryLow",
+            "description": "Pop top of stack to local variable",
+            "tentative": true
         },
         {
             "hex": "0xb9",
             "mnemonic": "GETLOCAL",
-            "description": "Push local variable to top of stack -- not part of Instructions.cpp"
+            "pops": 0,
+            "pushes": 1,
+            "tier": "VeryLow",
+            "description": "Push local variable to top of stack",
+            "tentative": true
+        },
+        {
+            "hex": "0xc1",
+            "mnemonic": "XADD",
+            "pops": 0,
+            "pushes": 0,
+            "tier": "Special",
+            "description": "Addition operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xc2",
+            "mnemonic": "XMUL",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Mulitplication operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xc3",
+            "mnemonic": "XSUB",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Subtraction operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xc4",
+            "mnemonic": "XDIV",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Integer division operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xc5",
+            "mnemonic": "XSDIV",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Signed integer division operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xc6",
+            "mnemonic": "XMOD",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Modulo remainder operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xc7",
+            "mnemonic": "XSMOD",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Signed modulo remainder operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xd0",
+            "mnemonic": "XLT",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Less-than comparision",
+            "tentative": true
+        },
+        {
+            "hex": "0xd1",
+            "mnemonic": "XGT",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Greater-than comparision",
+            "tentative": true
+        },
+        {
+            "hex": "0xd2",
+            "mnemonic": "XSLT",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Signed less-than comparision",
+            "tentative": true
+        },
+        {
+            "hex": "0xd3",
+            "mnemonic": "XSGT",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Signed greater-than comparision",
+            "tentative": true
+        },
+        {
+            "hex": "0xd4",
+            "mnemonic": "XEQ",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Equality comparision",
+            "tentative": true
+        },
+        {
+            "hex": "0xd5",
+            "mnemonic": "XISZERO",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Simple not operator",
+            "tentative": true
+        },
+        {
+            "hex": "0xd6",
+            "mnemonic": "XAND",
+            "pops": 1,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Bitwise AND operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xd7",
+            "mnemonic": "XOOR",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Bitwise OR operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xd8",
+            "mnemonic": "XXOR",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Bitwise XOR operation",
+            "tentative": true
+        },
+        {
+            "hex": "0xd9",
+            "mnemonic": "XNOT",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Bitwise NOT opertation",
+            "tentative": true
+        },
+        {
+            "hex": "0xdb",
+            "mnemonic": "XSHL",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Shift left opertation",
+            "tentative": true
+        },
+        {
+            "hex": "0xdc",
+            "mnemonic": "XSHR",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Shift right opertation",
+            "tentative": true
+        },
+        {
+            "hex": "0xdd",
+            "mnemonic": "XSAR",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Shift arithmetic right opertation",
+            "tentative": true
+        },
+        {
+            "hex": "0xde",
+            "mnemonic": "XROL",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Rotate left opertation",
+            "tentative": true
+        },
+        {
+            "hex": "0xdf",
+            "mnemonic": "XROR",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Rotate right opertation",
+            "tentative": true
+        },
+        {
+            "hex": "0xe0",
+            "mnemonic": "XPUSH",
+            "pops": 1,
+            "pushes": 1,
+            "tier": "VeryLow",
+            "description": "Push vector to stack",
+            "tentative": true
+        },
+        {
+            "hex": "0xe1",
+            "mnemonic": "XMLOAD",
+            "pops": 1,
+            "pushes": 1,
+            "tier": "VeryLow",
+            "description": "Load vector from memory",
+            "tentative": true
+        },
+        {
+            "hex": "0xe2",
+            "mnemonic": "XMSTORE",
+            "pops": 2,
+            "pushes": 0,
+            "tier": "VeryLow",
+            "description": "Save vector to memory",
+            "tentative": true
+        },
+        {
+            "hex": "0xe4",
+            "mnemonic": "XSLOAD",
+            "pops": 1,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Load vector from storage",
+            "tentative": true
+        },
+        {
+            "hex": "0xe5",
+            "mnemonic": "XSSTORE",
+            "pops": 2,
+            "pushes": 0,
+            "tier": "Special",
+            "description": "Save vector to storage",
+            "tentative": true
+        },
+        {
+            "hex": "0xe6",
+            "mnemonic": "XVTOWIDE",
+            "pops": 1,
+            "pushes": 1,
+            "tier": "VeryLow",
+            "description": "Convert vector to wide integer",
+            "tentative": true
+        },
+        {
+            "hex": "0xe7",
+            "mnemonic": "XWIDETOV",
+            "pops": 1,
+            "pushes": 1,
+            "tier": "VeryLow",
+            "description": "Convert wide integer to vector",
+            "tentative": true
+        },
+        {
+            "hex": "0xe8",
+            "mnemonic": "XGET",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Get data from vector",
+            "tentative": true
+        },
+        {
+            "hex": "0xe9",
+            "mnemonic": "XPUT",
+            "pops": 3,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Put data in vector",
+            "tentative": true
+        },
+        {
+            "hex": "0xea",
+            "mnemonic": "XSWIZZLE",
+            "pops": 2,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Permute data in vector",
+            "tentative": true
+        },
+        {
+            "hex": "0xeb",
+            "mnemonic": "XSHUFFLE",
+            "pops": 3,
+            "pushes": 1,
+            "tier": "Special",
+            "description": "Permute data in two vectors",
+            "tentative": true
         },
         {
             "hex": "0xf0",
@@ -1603,12 +1960,14 @@
         },
         {
             "hex": "0xff",
-            "mnemonic": "SELFDESTRUCT",
+            "mnemonic": ["SELFDESTRUCT", "SUICIDE"],
             "pops": 1,
             "pushes": 0,
-            "description": "Halt execution and register account for later deletion.",
+            "tier": "Special",
+            "description": "Halt execution and register account for later deletion",
             "gas": 5000,
-            "additional_items": 0
+            "additional_items": 0,
+            "side_effects": true
         }
     ]
 }

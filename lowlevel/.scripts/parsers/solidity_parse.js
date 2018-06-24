@@ -1,7 +1,6 @@
 "use strict";
 
 const fs = require("fs");
-const merge = require("merge");
 
 let utils = require("../utils");
 
@@ -29,7 +28,7 @@ utils.parseByLine(solSource).forEach((row) => {
     };
 
     let opcode = utils.findOpcodeByName(jsonData.mnemonic);
-    merge(opcode, jsonData);
+    utils.extend(opcode, jsonData);
 });
 
 utils.saveCommon();

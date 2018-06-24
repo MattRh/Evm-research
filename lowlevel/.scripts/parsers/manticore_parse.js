@@ -1,7 +1,6 @@
 "use strict";
 
 const fs = require("fs");
-const merge = require("merge");
 
 let utils = require("../utils");
 
@@ -25,7 +24,7 @@ utils.parseByLine(manSource).forEach((row) => {
 
     let jsonData = {
         hex: data[0],
-        mnemonic: data[1],
+        //mnemonic: data[1], // we don't want this mnemonic
         additional_items: data[2],
         pops: data[3],
         pushes: data[4],
@@ -34,11 +33,11 @@ utils.parseByLine(manSource).forEach((row) => {
     };
 
     let opcode = utils.findOpcodeByHex(jsonData.hex);
-    if(opcode.description && opcode.description.length > 0) {
-        delete jsonData.description;
+    if(utils.isEmpty(opcode)) {
+        return;
     }
 
-    merge(opcode, merge(jsonData, opcode));
+    utils.extend(opcode, jsonData);
 });
 
 utils.saveCommon();

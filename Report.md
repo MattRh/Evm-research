@@ -248,6 +248,7 @@ P.S. Links that REALLY worth to visit are marked by **bold text**
 * (official wiki) Development tutorial: https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial
 
 ## Solidity
+* (RU video) **Introduction to Solidity**: https://www.youtube.com/watch?v=mtvkFzW3o3Y
 * (official doc) Partly russian syntax description: [https://github.com/ethereum/wiki/wiki/.....](https://github.com/ethereum/wiki/wiki/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-Solidity)
 * (official docs) Docs: https://solidity.readthedocs.io/en/latest/
 * (article) **Solidity security best practices**: https://consensys.github.io/smart-contract-best-practices/

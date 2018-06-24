@@ -3,8 +3,6 @@
 const fs = require("fs");
 const toMarkdown = require("json-to-markdown-table");
 
-let utils = require("./utils");
-
 function compileTable(arr, columns = [], extend_columns = false) {
     if(!columns.length || extend_columns) {
         arr.forEach((obj) => {
@@ -31,6 +29,9 @@ function compileTable(arr, columns = [], extend_columns = false) {
                 if(typeof val === "undefined") {
                     val = " ";
                 }
+                if(key === 'mnemonic' && Array.isArray(val)) {
+                    val = val.join(' &#124; '); // inserts vertical line
+                }
 
                 newObj[formatHead(key)] = val;
             }
@@ -46,8 +47,8 @@ function compileTable(arr, columns = [], extend_columns = false) {
 
 let source = JSON.parse(fs.readFileSync("../opcodes.json").toString());
 
-let groups = compileTable(source.groups);
-let tiers = compileTable(source.tiers);
+//let groups = compileTable(source.groups);
+//let tiers = compileTable(source.tiers);
 let opcodes = compileTable(source.opcodes);
 
 //console.log("### Groups \n\n", groups, "\n");
