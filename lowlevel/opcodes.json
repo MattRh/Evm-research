@@ -30,116 +30,147 @@
         {
             "hex": "0x00",
             "mnemonic": "STOP",
+            "assembly": "stop",
             "pops": 0,
             "pushes": 0,
             "tier": "Zero",
             "description": "Halts execution",
             "gas": 0,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Stop execution, identical to return(0,0)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x01",
             "mnemonic": "ADD",
+            "assembly": "add(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Addition operation",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X + y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x02",
             "mnemonic": "MUL",
+            "assembly": "mul(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "Low",
             "description": "Multiplication operation",
             "gas": 5,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X * y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x03",
             "mnemonic": "SUB",
+            "assembly": "sub(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Subtraction operation",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X - y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x04",
             "mnemonic": "DIV",
+            "assembly": "div(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "Low",
             "description": "Integer division operation",
             "gas": 5,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X / y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x05",
             "mnemonic": "SDIV",
+            "assembly": "sdiv(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "Low",
             "description": "Signed integer division operation",
             "gas": 5,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X / y, for signed numbers in two's complement",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x06",
             "mnemonic": "MOD",
+            "assembly": "mod(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "Low",
             "description": "Modulo remainder operation",
             "gas": 5,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X % y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x07",
             "mnemonic": "SMOD",
+            "assembly": "smod(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "Low",
             "description": "Signed modulo remainder operation",
             "gas": 5,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "X % y, for signed numbers in two's complement",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x08",
             "mnemonic": "ADDMOD",
+            "assembly": "addmod(x, y, m)",
             "pops": 3,
             "pushes": 1,
             "tier": "Mid",
             "description": "Unsigned modular addition",
             "gas": 8,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "(x + y) % m with arbitrary precision arithmetics",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x09",
             "mnemonic": "MULMOD",
+            "assembly": "mulmod(x, y, m)",
             "pops": 3,
             "pushes": 1,
             "tier": "Mid",
             "description": "Unsigned modular multiplication",
             "gas": 8,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "(x * y) % m with arbitrary precision arithmetics",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x0a",
             "mnemonic": "EXP",
+            "assembly": "exp(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "Special",
@@ -147,173 +178,221 @@
             "gas": 10,
             "additional_items": 0,
             "side_effects": false,
+            "assembly_description": "X to the power of y",
+            "assembly_since": "Frontier",
             "gas_formula": "(exp == 0) ? 10 : (10 + 10 * (1 + log256(exp)))"
         },
         {
             "hex": "0x0b",
             "mnemonic": "SIGNEXTEND",
+            "assembly": "signextend(i, x)",
             "pops": 2,
             "pushes": 1,
             "tier": "Low",
             "description": "Extend length of signed integer",
             "gas": 5,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Sign extend from (i*8+7)th bit counting from least significant",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x10",
             "mnemonic": "LT",
+            "assembly": "lt(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Less-than comparison",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "1 if x < y, 0 otherwise",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x11",
             "mnemonic": "GT",
+            "assembly": "gt(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Greater-than comparison",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "1 if x > y, 0 otherwise",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x12",
             "mnemonic": "SLT",
+            "assembly": "slt(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Signed less-than comparison",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "1 if x < y, 0 otherwise, for signed numbers in two's complement",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x13",
             "mnemonic": "SGT",
+            "assembly": "sgt(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Signed greater-than comparison",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "1 if x > y, 0 otherwise, for signed numbers in two's complement",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x14",
             "mnemonic": "EQ",
+            "assembly": "eq(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Equality comparison",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "1 if x == y, 0 otherwise",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x15",
             "mnemonic": "ISZERO",
+            "assembly": "iszero(x)",
             "pops": 1,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Simple not operator",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "1 if x == 0, 0 otherwise",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x16",
             "mnemonic": "AND",
+            "assembly": "and(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise AND operation",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Bitwise and of x and y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x17",
             "mnemonic": "OR",
+            "assembly": "or(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise OR operation",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Bitwise or of x and y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x18",
             "mnemonic": "XOR",
+            "assembly": "xor(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise XOR operation",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Bitwise xor of x and y",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x19",
             "mnemonic": "NOT",
+            "assembly": "not(x)",
             "pops": 1,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise NOT operation",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "~x, every bit of x is negated",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x1a",
             "mnemonic": "BYTE",
+            "assembly": "byte(n, x)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Retrieve single byte from word",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Nth byte of x, where the most significant byte is the 0th byte",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x1b",
             "mnemonic": "SHL",
+            "assembly": "shl(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise SHL operation",
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Logical shift left y by x bits",
+            "assembly_since": "Constantinople"
         },
         {
             "hex": "0x1c",
             "mnemonic": "SHR",
+            "assembly": "shr(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise SHR operation",
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Logical shift right y by x bits",
+            "assembly_since": "Constantinople"
         },
         {
             "hex": "0x1d",
             "mnemonic": "SAR",
+            "assembly": "sar(x, y)",
             "pops": 2,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Bitwise SAR operation",
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Arithmetic shift right y by x bits",
+            "assembly_since": "Constantinople"
         },
         {
             "hex": "0x20",
             "mnemonic": ["KECCAK256", "SHA3"],
+            "assembly": "keccak256(p, n)",
             "pops": 2,
             "pushes": 1,
             "tier": "Special",
@@ -321,88 +400,112 @@
             "gas": 30,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Keccak(mem[p...(p+n)))",
+            "assembly_since": "Frontier",
             "gas_formula": "30 + 6 * (size of input in words)"
         },
         {
             "hex": "0x30",
             "mnemonic": "ADDRESS",
+            "assembly": "address",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get address of currently executing account",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Address of the current contract / execution context",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x31",
             "mnemonic": "BALANCE",
+            "assembly": "balance(a)",
             "pops": 1,
             "pushes": 1,
             "tier": "Balance",
             "description": "Get balance of the given account",
             "gas": 20,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Wei balance at address a",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x32",
             "mnemonic": "ORIGIN",
+            "assembly": "origin",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get execution origination address",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Transaction sender",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x33",
             "mnemonic": "CALLER",
+            "assembly": "caller",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get caller address",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Call sender (excluding `delegatecall`)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x34",
             "mnemonic": "CALLVALUE",
+            "assembly": "callvalue",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get deposited value by the instruction/transaction responsible for this execution",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Wei sent together with the current call",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x35",
             "mnemonic": "CALLDATALOAD",
+            "assembly": "calldataload(p)",
             "pops": 1,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Get input data of current environment",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Call data starting from position p (32 bytes)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x36",
             "mnemonic": "CALLDATASIZE",
+            "assembly": "calldatasize",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get size of input data in current environment",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Size of call data in bytes",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x37",
             "mnemonic": "CALLDATACOPY",
+            "assembly": "calldatacopy(t, f, s)",
             "pops": 3,
             "pushes": 0,
             "tier": "VeryLow",
@@ -410,22 +513,28 @@
             "gas": 3,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Copy s bytes from calldata at position f to mem at position t",
+            "assembly_since": "Frontier",
             "gas_formula": "2 + 3 * (number of words copied, rounded up)"
         },
         {
             "hex": "0x38",
             "mnemonic": "CODESIZE",
+            "assembly": "codesize",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get size of code running in current environment",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Size of the code of the current contract / execution context",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x39",
             "mnemonic": "CODECOPY",
+            "assembly": "codecopy(t, f, s)",
             "pops": 3,
             "pushes": 0,
             "tier": "VeryLow",
@@ -433,33 +542,42 @@
             "gas": 3,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Copy s bytes from code at position f to mem at position t",
+            "assembly_since": "Frontier",
             "gas_formula": "2 + 3 * (number of words copied, rounded up)"
         },
         {
             "hex": "0x3a",
             "mnemonic": "GASPRICE",
+            "assembly": "gasprice",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get price of gas in current environment",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Gas price of the transaction",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x3b",
             "mnemonic": "EXTCODESIZE",
+            "assembly": "extcodesize(a)",
             "pops": 1,
             "pushes": 1,
             "tier": "ExtCode",
             "description": "Get external code size (from another contract)",
             "gas": 20,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Size of the code at address a",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x3c",
             "mnemonic": "EXTCODECOPY",
+            "assembly": "extcodecopy(a, t, f, s)",
             "pops": 4,
             "pushes": 0,
             "tier": "ExtCode",
@@ -467,11 +585,14 @@
             "gas": 20,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Like codecopy(t, f, s) but take code at address a",
+            "assembly_since": "Frontier",
             "gas_formula": "700 + 3 * (number of words copied, rounded up)"
         },
         {
             "hex": "0x3d",
             "mnemonic": "RETURNDATASIZE",
+            "assembly": "returndatasize",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
@@ -479,11 +600,14 @@
             "gas": 2,
             "additional_items": 0,
             "side_effects": false,
+            "assembly_description": "Size of the last returndata",
+            "assembly_since": "Byzantium",
             "link": "[EIP 211](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-211.md)"
         },
         {
             "hex": "0x3e",
             "mnemonic": "RETURNDATACOPY",
+            "assembly": "returndatacopy(t, f, s)",
             "pops": 3,
             "pushes": 0,
             "tier": "VeryLow",
@@ -491,132 +615,168 @@
             "gas": 3,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Copy s bytes from returndata at position f to mem at position t",
+            "assembly_since": "Byzantium",
             "link": "[EIP 211](https://github.com/ethereum/EIPs/blob/33907618abf4bc2512b509a88c037ae36d20394c/EIPS/eip-211.md)"
         },
         {
             "hex": "0x40",
             "mnemonic": "BLOCKHASH",
+            "assembly": "blockhash(b)",
             "pops": 1,
             "pushes": 1,
             "tier": "Ext",
             "description": "Get hash of most recent complete block",
             "gas": 20,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Hash of block nr b - only for last 256 blocks excluding current",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x41",
             "mnemonic": "COINBASE",
+            "assembly": "coinbase",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the block's coinbase address",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Current mining beneficiary",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x42",
             "mnemonic": "TIMESTAMP",
+            "assembly": "timestamp",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the block's timestamp",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Timestamp of the current block in seconds since the epoch",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x43",
             "mnemonic": "NUMBER",
+            "assembly": "number",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the block's number",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Current block number",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x44",
             "mnemonic": "DIFFICULTY",
+            "assembly": "difficulty",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the block's difficulty",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Difficulty of the current block",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x45",
             "mnemonic": "GASLIMIT",
+            "assembly": "gaslimit",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the block's gas limit",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Block gas limit of the current block",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x50",
             "mnemonic": "POP",
+            "assembly": "pop(x)",
             "pops": 1,
             "pushes": 0,
             "tier": "Base",
             "description": "Remove item from stack",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Remove the element pushed by x",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x51",
             "mnemonic": "MLOAD",
+            "assembly": "mload(p)",
             "pops": 1,
             "pushes": 1,
             "tier": "VeryLow",
             "description": "Load word from memory",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Mem[p..(p+32))",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x52",
             "mnemonic": "MSTORE",
+            "assembly": "mstore(p, v)",
             "pops": 2,
             "pushes": 0,
             "tier": "VeryLow",
             "description": "Save word to memory",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Mem[p..(p+32)) := v",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x53",
             "mnemonic": "MSTORE8",
+            "assembly": "mstore8(p, v)",
             "pops": 2,
             "pushes": 0,
             "tier": "VeryLow",
             "description": "Save byte to memory",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Mem[p] := v & 0xff (only modifies a single byte)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x54",
             "mnemonic": "SLOAD",
+            "assembly": "sload(p)",
             "pops": 1,
             "pushes": 1,
             "tier": "Special",
             "description": "Load word from storage",
             "gas": 50,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Storage[p]",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x55",
             "mnemonic": "SSTORE",
+            "assembly": "sstore(p, v)",
             "pops": 2,
             "pushes": 0,
             "tier": "Special",
@@ -624,62 +784,79 @@
             "gas": 0,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Storage[p] := v",
+            "assembly_since": "Frontier",
             "gas_formula": "((value != 0) && (storage_location == 0)) ? 20000 : 5000"
         },
         {
             "hex": "0x56",
             "mnemonic": "JUMP",
+            "assembly": "jump(label)",
             "pops": 1,
             "pushes": 0,
             "tier": "Mid",
             "description": "Alter the program counter",
             "gas": 8,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Jump to label / code position",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x57",
             "mnemonic": "JUMPI",
+            "assembly": "jumpi(label, cond)",
             "pops": 2,
             "pushes": 0,
             "tier": "High",
             "description": "Conditionally alter the program counter",
             "gas": 10,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Jump to label if cond is nonzero",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x58",
             "mnemonic": "PC",
+            "assembly": "pc",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the program counter",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Current position in code",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x59",
             "mnemonic": "MSIZE",
+            "assembly": "msize",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the size of active memory",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Size of memory, i.e. largest accessed memory index",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x5a",
             "mnemonic": "GAS",
+            "assembly": "gas",
             "pops": 0,
             "pushes": 1,
             "tier": "Base",
             "description": "Get the amount of available gas",
             "gas": 2,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Gas still available to execution",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x5b",
@@ -1047,358 +1224,455 @@
         {
             "hex": "0x80",
             "mnemonic": "DUP1",
+            "assembly": "dup1",
             "pops": 1,
             "pushes": 2,
             "tier": "VeryLow",
             "description": "Copies the highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x81",
             "mnemonic": "DUP2",
+            "assembly": "dup2",
             "pops": 2,
             "pushes": 3,
             "tier": "VeryLow",
             "description": "Copies the second highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x82",
             "mnemonic": "DUP3",
+            "assembly": "dup3",
             "pops": 3,
             "pushes": 4,
             "tier": "VeryLow",
             "description": "Copies the third highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x83",
             "mnemonic": "DUP4",
+            "assembly": "dup4",
             "pops": 4,
             "pushes": 5,
             "tier": "VeryLow",
             "description": "Copies the 4th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x84",
             "mnemonic": "DUP5",
+            "assembly": "dup5",
             "pops": 5,
             "pushes": 6,
             "tier": "VeryLow",
             "description": "Copies the 5th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x85",
             "mnemonic": "DUP6",
+            "assembly": "dup6",
             "pops": 6,
             "pushes": 7,
             "tier": "VeryLow",
             "description": "Copies the 6th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x86",
             "mnemonic": "DUP7",
+            "assembly": "dup7",
             "pops": 7,
             "pushes": 8,
             "tier": "VeryLow",
             "description": "Copies the 7th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x87",
             "mnemonic": "DUP8",
+            "assembly": "dup8",
             "pops": 8,
             "pushes": 9,
             "tier": "VeryLow",
             "description": "Copies the 8th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x88",
             "mnemonic": "DUP9",
+            "assembly": "dup9",
             "pops": 9,
             "pushes": 10,
             "tier": "VeryLow",
             "description": "Copies the 9th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x89",
             "mnemonic": "DUP10",
+            "assembly": "dup10",
             "pops": 10,
             "pushes": 11,
             "tier": "VeryLow",
             "description": "Copies the 10th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x8a",
             "mnemonic": "DUP11",
+            "assembly": "dup11",
             "pops": 11,
             "pushes": 12,
             "tier": "VeryLow",
             "description": "Copies the 11th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x8b",
             "mnemonic": "DUP12",
+            "assembly": "dup12",
             "pops": 12,
             "pushes": 13,
             "tier": "VeryLow",
             "description": "Copies the 12th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x8c",
             "mnemonic": "DUP13",
+            "assembly": "dup13",
             "pops": 13,
             "pushes": 14,
             "tier": "VeryLow",
             "description": "Copies the 13th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x8d",
             "mnemonic": "DUP14",
+            "assembly": "dup14",
             "pops": 14,
             "pushes": 15,
             "tier": "VeryLow",
             "description": "Copies the 14th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x8e",
             "mnemonic": "DUP15",
+            "assembly": "dup15",
             "pops": 15,
             "pushes": 16,
             "tier": "VeryLow",
             "description": "Copies the 15th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x8f",
             "mnemonic": "DUP16",
+            "assembly": "dup16",
             "pops": 16,
             "pushes": 17,
             "tier": "VeryLow",
             "description": "Copies the 16th highest item in the stack to the top of the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Copy ith stack slot to the top (counting from top)",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x90",
             "mnemonic": "SWAP1",
+            "assembly": "swap1",
             "pops": 2,
             "pushes": 2,
             "tier": "VeryLow",
             "description": "Swaps the highest and second highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x91",
             "mnemonic": "SWAP2",
+            "assembly": "swap2",
             "pops": 3,
             "pushes": 3,
             "tier": "VeryLow",
             "description": "Swaps the highest and third highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x92",
             "mnemonic": "SWAP3",
+            "assembly": "swap3",
             "pops": 4,
             "pushes": 4,
             "tier": "VeryLow",
             "description": "Swaps the highest and 4th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x93",
             "mnemonic": "SWAP4",
+            "assembly": "swap4",
             "pops": 5,
             "pushes": 5,
             "tier": "VeryLow",
             "description": "Swaps the highest and 5th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x94",
             "mnemonic": "SWAP5",
+            "assembly": "swap5",
             "pops": 6,
             "pushes": 6,
             "tier": "VeryLow",
             "description": "Swaps the highest and 6th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x95",
             "mnemonic": "SWAP6",
+            "assembly": "swap6",
             "pops": 7,
             "pushes": 7,
             "tier": "VeryLow",
             "description": "Swaps the highest and 7th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x96",
             "mnemonic": "SWAP7",
+            "assembly": "swap7",
             "pops": 8,
             "pushes": 8,
             "tier": "VeryLow",
             "description": "Swaps the highest and 8th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x97",
             "mnemonic": "SWAP8",
+            "assembly": "swap8",
             "pops": 9,
             "pushes": 9,
             "tier": "VeryLow",
             "description": "Swaps the highest and 9th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x98",
             "mnemonic": "SWAP9",
+            "assembly": "swap9",
             "pops": 10,
             "pushes": 10,
             "tier": "VeryLow",
             "description": "Swaps the highest and 10th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x99",
             "mnemonic": "SWAP10",
+            "assembly": "swap10",
             "pops": 11,
             "pushes": 11,
             "tier": "VeryLow",
             "description": "Swaps the highest and 11th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x9a",
             "mnemonic": "SWAP11",
+            "assembly": "swap11",
             "pops": 12,
             "pushes": 12,
             "tier": "VeryLow",
             "description": "Swaps the highest and 12th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x9b",
             "mnemonic": "SWAP12",
+            "assembly": "swap12",
             "pops": 13,
             "pushes": 13,
             "tier": "VeryLow",
             "description": "Swaps the highest and 13th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x9c",
             "mnemonic": "SWAP13",
+            "assembly": "swap13",
             "pops": 14,
             "pushes": 14,
             "tier": "VeryLow",
             "description": "Swaps the highest and 14th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x9d",
             "mnemonic": "SWAP14",
+            "assembly": "swap14",
             "pops": 15,
             "pushes": 15,
             "tier": "VeryLow",
             "description": "Swaps the highest and 15th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x9e",
             "mnemonic": "SWAP15",
+            "assembly": "swap15",
             "pops": 16,
             "pushes": 16,
             "tier": "VeryLow",
             "description": "Swaps the highest and 16th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0x9f",
             "mnemonic": "SWAP16",
+            "assembly": "swap16",
             "pops": 17,
             "pushes": 17,
             "tier": "VeryLow",
             "description": "Swaps the highest and 17th highest value on the stack",
             "gas": 3,
             "additional_items": 0,
-            "side_effects": false
+            "side_effects": false,
+            "assembly_description": "Swap topmost and ith stack slot below it",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0xa0",
             "mnemonic": "LOG0",
+            "assembly": "log0(p, s)",
             "pops": 2,
             "pushes": 0,
             "tier": "Special",
@@ -1406,11 +1680,14 @@
             "gas": 375,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Log without topics and data mem[p..(p+s))",
+            "assembly_since": "Frontier",
             "gas_formula": "375 + 8 * (number of bytes in log data)"
         },
         {
             "hex": "0xa1",
             "mnemonic": "LOG1",
+            "assembly": "log1(p, s, t1)",
             "pops": 3,
             "pushes": 0,
             "tier": "Special",
@@ -1418,11 +1695,14 @@
             "gas": 750,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Log with topic t1 and data mem[p..(p+s))",
+            "assembly_since": "Frontier",
             "gas_formula": "375 + 8 * (number of bytes in log data) + 375"
         },
         {
             "hex": "0xa2",
             "mnemonic": "LOG2",
+            "assembly": "log2(p, s, t1, t2)",
             "pops": 4,
             "pushes": 0,
             "tier": "Special",
@@ -1430,11 +1710,14 @@
             "gas": 1125,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Log with topics t1, t2 and data mem[p..(p+s))",
+            "assembly_since": "Frontier",
             "gas_formula": "375 + 8 * (number of bytes in log data) + 2 * 375"
         },
         {
             "hex": "0xa3",
             "mnemonic": "LOG3",
+            "assembly": "log3(p, s, t1, t2, t3)",
             "pops": 5,
             "pushes": 0,
             "tier": "Special",
@@ -1442,11 +1725,14 @@
             "gas": 1500,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Log with topics t1, t2, t3 and data mem[p..(p+s))",
+            "assembly_since": "Frontier",
             "gas_formula": "375 + 8 * (number of bytes in log data) + 3 * 375"
         },
         {
             "hex": "0xa4",
             "mnemonic": "LOG4",
+            "assembly": "log4(p, s, t1, t2, t3, t4)",
             "pops": 6,
             "pushes": 0,
             "tier": "Special",
@@ -1454,6 +1740,8 @@
             "gas": 1875,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Log with topics t1, t2, t3, t4 and data mem[p..(p+s))",
+            "assembly_since": "Frontier",
             "gas_formula": "375 + 8 * (number of bytes in log data) + 4 * 375"
         },
         {
@@ -1884,17 +2172,21 @@
         {
             "hex": "0xf0",
             "mnemonic": "CREATE",
+            "assembly": "create(v, p, s)",
             "pops": 3,
             "pushes": 1,
             "tier": "Special",
             "description": "Create a new account with associated code",
             "gas": 32000,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Create new contract with code mem[p..(p+s)) and send v wei and return the new address",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0xf1",
             "mnemonic": "CALL",
+            "assembly": "call(g, a, v, in, insize, out, outsize)",
             "pops": 7,
             "pushes": 1,
             "tier": "Special",
@@ -1902,11 +2194,14 @@
             "gas": 40,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Call contract at address a with input mem[in..(in+insize)) providing g gas and v wei and output area mem[out..(out+outsize)) returning 0 on error (eg. out of gas) and 1 on success",
+            "assembly_since": "Frontier",
             "gas_formula": "Complex -- see yellow paper  Appendix H"
         },
         {
             "hex": "0xf2",
             "mnemonic": "CALLCODE",
+            "assembly": "callcode(g, a, v, in, insize, out, outsize)",
             "pops": 7,
             "pushes": 1,
             "tier": "Special",
@@ -1914,22 +2209,28 @@
             "gas": 40,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Identical to `call` but only use the code from a and stay in the context of the current contract otherwise",
+            "assembly_since": "Frontier",
             "gas_formula": "Complex -- see yellow paper  Appendix H"
         },
         {
             "hex": "0xf3",
             "mnemonic": "RETURN",
+            "assembly": "return(p, s)",
             "pops": 2,
             "pushes": 0,
             "tier": "Zero",
             "description": "Halt execution returning output data",
             "gas": 0,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "End execution, return data mem[p..(p+s))",
+            "assembly_since": "Frontier"
         },
         {
             "hex": "0xf4",
             "mnemonic": "DELEGATECALL",
+            "assembly": "delegatecall(g, a, in, insize, out, outsize)",
             "pops": 6,
             "pushes": 1,
             "tier": "Special",
@@ -1937,43 +2238,55 @@
             "gas": 40,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "Identical to `callcode` but also keep `caller` and `callvalue`",
+            "assembly_since": "Homestead",
             "gas_formula": "Complex -- see yellow paper  Appendix H"
         },
         {
             "hex": "0xfa",
             "mnemonic": "STATICCALL",
+            "assembly": "staticcall(g, a, in, insize, out, outsize)",
             "pops": 6,
             "pushes": 1,
             "tier": "Special",
             "description": "Like CALL but disallow state modifications",
             "gas": 40,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Identical to `call(g, a, 0, in, insize, out, outsize)` but do not allow state modifications",
+            "assembly_since": "Byzantium"
         },
         {
             "hex": "0xfb",
             "mnemonic": "CREATE2",
+            "assembly": "create2(v, n, p, s)",
             "pops": 4,
             "pushes": 1,
             "tier": "Special",
             "description": "Create new account with associated code at address `sha3(sender + salt + sha3(init code)) % 2**160`",
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "Create new contract with code mem[p..(p+s)) at address keccak256(<address> . n . keccak256(mem[p..(p+s))) and send v wei and return the new address",
+            "assembly_since": "Constantinople"
         },
         {
             "hex": "0xfd",
             "mnemonic": "REVERT",
+            "assembly": "revert(p, s)",
             "pops": 2,
             "pushes": 0,
             "tier": "Zero",
             "description": "Halt execution, revert state and return output data",
             "gas": 0,
             "additional_items": 0,
-            "side_effects": true
+            "side_effects": true,
+            "assembly_description": "End execution, revert state changes, return data mem[p..(p+s))",
+            "assembly_since": "Byzantium"
         },
         {
             "hex": "0xfe",
             "mnemonic": "INVALID",
+            "assembly": "invalid",
             "pops": 0,
             "pushes": 0,
             "tier": "Zero",
@@ -1981,11 +2294,14 @@
             "gas": 0,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "End execution with invalid instruction",
+            "assembly_since": "Frontier",
             "gas_formula": "N/A"
         },
         {
             "hex": "0xff",
             "mnemonic": ["SELFDESTRUCT", "SUICIDE"],
+            "assembly": "selfdestruct(a)",
             "pops": 1,
             "pushes": 0,
             "tier": "Special",
@@ -1993,6 +2309,8 @@
             "gas": 5000,
             "additional_items": 0,
             "side_effects": true,
+            "assembly_description": "End execution, destroy current contract and send funds to a",
+            "assembly_since": "Frontier",
             "gas_formula": "5000 + ((create_new_account) ? 25000 : 0)"
         }
     ]

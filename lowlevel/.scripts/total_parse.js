@@ -9,4 +9,4 @@ require("./parsers/ethereum_parse");
 require("./parsers/manticore_parse");
 require("./parsers/gas_costs_parse");
 require("./parsers/reference_parse");
-// require("./parsers/assembly_parse");
+require("./parsers/assembly_parse");

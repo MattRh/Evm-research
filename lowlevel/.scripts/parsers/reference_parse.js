@@ -1,7 +1,7 @@
 "use strict";
 
-const THIS_COMMIT = "606405b5ab7aa28d8191958504e8aad4649666c9";
-const LAST_COMMIT = "33907618abf4bc2512b509a88c037ae36d20394c";
+const THIS_COMMIT = "606405b5ab7aa28d8191958504e8aad4649666c9"; // last commit used in source
+const LAST_COMMIT = "33907618abf4bc2512b509a88c037ae36d20394c"; // last commit for this moment
 
 const fs = require("fs");
 
@@ -10,8 +10,8 @@ let utils = require("../utils");
 // Ethereum VM (EVM) Opcodes and Instruction Reference
 let refSource = fs.readFileSync("./data/opcode_instruction_reference.txt").toString();
 
-// we are not interesten in first two rows
-utils.parseByLine(refSource).slice(2).forEach((line) => {
+// we are not interested in first two rows
+utils.parseByLine(refSource).slice(3).forEach((line) => {
     let parsed = line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((el) => el.trim());
 
     let data = {
