@@ -219,13 +219,13 @@ https://securify.ch/
 ## Problems in Solidity
 
 ### By design
-// todo
 
 #### JS like syntax/structure
-// todo
-
-#### Modifiers
-// todo
+Solidity реализует стандарт ECMAscript и обладает JavaScript подобным синтаксисом и структурой.
+Solidity не привнес чего-то нового, что было бы заточено под решение проблем, которые существуют на платформе Ethereum,
+он просто позволяет абстрагироваться от EVM и писать более привычный код.
+Скорее всего, было бы не плохо, если бы Solidity не позволял разработчику выстрелить себе в ногу,
+либо хотя бы изначально предупреждал, что он намерен это сделать.
 
 #### Immutable contracts
 Будучи загруженным в блокчейн, контракт больше не может быть изменен.
@@ -486,6 +486,7 @@ P.S. Links that REALLY worth to visit are marked by **bold text**
 * https://github.com/djrtwo/simple-contracts
 * https://github.com/raineorshine/solidity-by-example
 * https://github.com/chriseth/solidity-examples
+* https://learnxinyminutes.com/docs/solidity/
 
 ## EVM
 ### Readings/Videos
