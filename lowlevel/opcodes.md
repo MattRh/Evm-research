@@ -51,6 +51,10 @@ Python implementation sets [GAS_LIMIT_MINIMUM = 5000](https://github.com/ethereu
 
 Legend for opcodes table in below the table. It is woth mention that the table is HUGE, so you may have to scroll it horizontally
 
+Arithmetic operations that begin with X letter are part of [SIMD proposal](https://github.com/ethereum/EIPs/blob/a3e27d632dec11ad0dc06efa9b7e02c6ff984bc3/EIPS/eip-616.md)
+
+Some tentative instructions could be [found here](https://github.com/ethereum/EIPs/blob/77ee0e138c22400f75e06d5afda39ada68196f07/EIPS/eip-615.md)
+
 ## Tables
 
 ### Groups
