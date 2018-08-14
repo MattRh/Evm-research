@@ -177,11 +177,45 @@ Flow-control(как переход к подпрограммам и возвра
 Так же есть EIP 615, который пытается расширить функционал flow-control и позволить таким образом статический анализ кода,
 но на сколько я понял, он до сих пор так и не принял и ни одной реализации его нет.
 
-### Environment variables
-// todo
+### State
+Состоянием EVM является кортеж из 8 элементов:
+```
+block_state  // also references as *storage*
+transaction  // current transaction
+message      // current message
+code         // current contracts code
+memory       // memory byte array
+stack        // words on the stack
+pc           // program counter -> code[pc]
+gas          // gas left to run transaction
+```
 
-### Internal states
-// todo
+Так же уже упомянутый ранее EIP 615 предлогает добавить в этот список 
+состояния для подпрогамм, но оно так и не было реализованы.
+
+### Environment variables
+EVM(и выполняемый смартконтракт, соответственно) не изолирована от мира
+и может кое-что знать помимо своего внутреннего состояния.
+
+#### Block Information
+Информация о текущем блоке, который обрабатывается на данный момент
+```
+blockhash   // hash of the most recently completed block
+coinbase    // address of the recipient
+timestamp   // current block’s timestamp
+number      // number of the current block
+difficulty  // difficulty of the current block
+gaslimit    // gas limit that is attached to the current block
+```
+
+#### Runtime Environment Information
+Информация которая может понадобиться для выполнения транзакции
+```
+gas price  // current gas price as specified by the initiator of the transaction
+codesize   // size of the transaction codebase
+caller     // address of the account that is executing the transaction
+origin     // address of the transaction’s original sender
+```
 
 ### Contract call
 > Рассматривается частная схема для Solidity
@@ -351,7 +385,7 @@ EVM не имеет такой абстракции как функции, та�
 6161616161616161616161616161616100000000000000000000000000000000
 ```
 
-### Boilerplate
+### Pre-loader
 Как уже упоминалось, EVM не обладает абстракцией функции - соответственно, контракт должен сам об этом позаботиться.
 В Solidity для этого вначале контракта вставляется boilerplate часть кода, задача которой извлечь хэш функци из calldata,
 и выполнить прыжок на необходимую функцию.
